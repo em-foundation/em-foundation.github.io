@@ -1,0 +1,1103 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../intro/to-4/">
+      
+      
+        <link rel="next" href="../using/">
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.1">
+    
+    
+      
+        <title>Installing EM - Platform Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.72749a73.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6L10 18Z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="light-blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started-with-em" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Platform Documentation" class="md-header__button md-logo" aria-label="Platform Documentation" data-md-component="logo">
+      
+  <img src="../assets/logo12.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Platform Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installing EM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../intro/" class="md-tabs__link">
+          
+  
+    
+  
+  Introducing EM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Installing EM
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../using/" class="md-tabs__link">
+          
+  
+    
+  
+  Using EM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../porting/" class="md-tabs__link">
+          
+  
+    
+  
+  Porting EM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../advancing/" class="md-tabs__link">
+          
+  
+    
+  
+  Advancing EM
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Platform Documentation" class="md-nav__button md-logo" aria-label="Platform Documentation" data-md-component="logo">
+      
+  <img src="../assets/logo12.png" alt="logo">
+
+    </a>
+    Platform Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../intro/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Introducing EM
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_2">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introducing EM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/to-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EM modules & interfaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/to-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EM composites & templates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/to-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EM program life-cycle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/to-4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EM runtime bundles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Installing EM
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Installing EM
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software-development-kit" class="md-nav__link">
+    Software development kit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-mcu-hardware" class="md-nav__link">
+    Target MCU hardware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#em-builder-extension" class="md-nav__link">
+    EM Builder extension
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ready-set-go" class="md-nav__link">
+    Ready, Set, Go&nbsp;!!!
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../using/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Using EM
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Using EM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../using/using-01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EM tooling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../using/using-02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EM runtime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../porting/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Porting EM
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Porting EM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../advancing/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Advancing EM
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_6">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Advancing EM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advancing/cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Command-line interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advancing/energy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Energy Consuption
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advancing/bench/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Performance benchmarks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software-development-kit" class="md-nav__link">
+    Software development kit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-mcu-hardware" class="md-nav__link">
+    Target MCU hardware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#em-builder-extension" class="md-nav__link">
+    EM Builder extension
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ready-set-go" class="md-nav__link">
+    Ready, Set, Go&nbsp;!!!
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<style>.md-nav--primary {font-size: 0.8rem;}</style>
+
+<h1 id="getting-started-with-em">Getting started with EM</h1>
+<p>Using the EM language and its runtime requires a <em>cross-development</em> environment, in which <em>hosted</em> tooling will build&thinsp;/&thinsp;load executable EM programs onto <em>target</em> hardware. For the host, you'll use a PC running <strong>Windows</strong>, <strong>Linux</strong>, or <strong>macOS</strong>&thinsp;;&nbsp; for the target, you can choose any MCU board for which an <code class="language-em highlight"><span class="n">em$distro</span></code> package already exists.</p>
+<p>The <strong>EM SDK</strong> (described next) comprises a set of software development artifacts which you will download and install onto your host computer. Before doing so, however, ensure that recent versions of <a href="https://nodejs.org/en/download">Node.js</a> and <a href="https://code.visualstudio.com/download">VS Code</a> reside on your PC &mdash; and then install&thinsp;/&thinsp;upgrade these software engines as appropriate.</p>
+<p>At a minimum, the <strong>EM SDK</strong> requires version&thinsp;<code><span class="x">16.3.0</span></code> of Node.js and version&thinsp;<code><span class="x">1.80.0</span></code> of VS Code.&nbsp; Execute the commands <code class="language-em highlight"><span class="si">node&thinsp;--version</span></code> and <code class="language-em highlight"><span class="si">code&thinsp;--version</span></code> from your PC's shell to verify this requirement.</p>
+<div class="admonition warning">
+<p class="admonition-title">Do <em>not</em> proceed forward if either of these checks fail&thinsp;!!!</p>
+</div>
+<h2 id="software-development-kit">Software development kit</h2>
+<p>Go ahead and download the latest version of the <a href="http://www.bespoke-iot.com/"><strong>EM SDK</strong></a> tailored for your PC's operating system.  Delivered as a <code><span class="x">.zip</span></code> file, just <code class="language-em highlight"><span class="si">unzip</span></code> this file into the <code><span class="x">$HOME</span></code> or <code><span class="x">%HOMEPATH%</span></code> folder on your PC &mdash; which will then populate a sub-folder named <code><span class="x">.em-sdk</span></code> containing a variety of artifacts. Going forward, we'll refer to the <code><span class="x">$HOME/.em-sdk</span></code> or <code><span class="x">%HOMEPATH%\.em-sdk</span></code> folders using the symbol <code><span class="x"><em>EM-SDK</em></span></code>.</p>
+<p>Under the <code><span class="x"><em>EM-SDK</em></span></code> folder you'll find a sub-folder named <code><span class="x">tools</span></code>, which contains C&thinsp;/&thinsp;C++ compilers as well as emulation utilities &mdash; all used internally by EM to build&thinsp;/&thinsp;load executable target programs. Already located in a <em>well-known</em> place on your PC, EM requires no further setup of these tools.</p>
+<p>The <code><span class="x"><em>EM-SDK</em></span></code> folder contains the <strong>EM Builder</strong> VS Code extension &mdash; found in a file named <code><span class="x">em-builder-<em>vers</em>.vsix</span></code>, where <code><span class="x"><em>vers</em></span></code> encodes the extension's major&thinsp;/&thinsp;minor&thinsp;/&thinsp;micro version number followed by a timestamp.  <code><span class="x"><em>EM-SDK</em></span></code> also contains a VS Code <em>profile</em> used in conjunction with the <strong>EM Builder</strong> extension &mdash; found in a file named <code><span class="x">EM.code-profile</span></code>.</p>
+<h2 id="target-mcu-hardware">Target MCU hardware</h2>
+<p>The <strong>EM SDK</strong> &mdash; which you've just installed &mdash; contains <em>all</em> of the tools required to build&thinsp;/&thinsp;load EM programs targeting <em>any</em> of these boards; you won't need to download any additional, vendor-specific software.&nbsp;  While we encourage you to purchase one (or more) of these boards, you can still learn a great deal about EM <em>without</em> having any target hardware.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">LP-EM-CC2340R5</label><label for="__tabbed_1_2">Board #2</label><label for="__tabbed_1_3">Board #3</label><label for="__tabbed_1_4">No board at all</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The Texas Instruments <a href="https://www.ti.com/product/CC2340R5">CC2340R5</a> wireless MCU features an Arm Cortex-M0+ CPU together with a familiar suite of peripherals &mdash; including a generic 2.4&thinsp;GHz radio with BLE 5.x support.  Texas Instruments also offers an inexpensive <a href="https://www.ti.com/tool/LP-EM-CC2340R5">LP-EM-CC2340R5</a> evaluation board in their familiar <strong>LaunchPad</strong> format &mdash; available from TI as well as their distributors.</p>
+<p>You should also purchase this <a href="https://www.ti.com/tool/LP-XDS110ET">emulator board</a> from TI &mdash; unless you already own a "classic" TI LaunchPad with on-board XDS110 support.  In that case, you can easily connect this legacy LP to your new LP-EM-CC2340R5 board using a cable supplied by TI.</p>
+</div>
+<div class="tabbed-block">
+<p>TBD &mdash; <em>open for suggestions</em></p>
+</div>
+<div class="tabbed-block">
+<p>TBD &mdash; <em>open for suggestions</em></p>
+</div>
+<div class="tabbed-block">
+<p>Nothing to buy, of course&thinsp;!!!&nbsp;  You can still <em>build</em> executable programs using any <code class="language-em highlight"><span class="n">em$distro</span></code> package within the <strong>EM SDK</strong>; you just can't <em>load</em> these program onto target hardware.</p>
+</div>
+</div>
+</div>
+<div class="em-break"></div>
+
+<div class="admonition groups">
+<p class="admonition-title">Which MCU board(s) would you want to see EM support&thinsp;???</p>
+</div>
+<h2 id="em-builder-extension">EM Builder extension</h2>
+<p>At this stage, we can launch VS Code and install its <strong>EM Builder</strong> extension. To begin, first create an empty folder <em>anywhere</em> on your PC (outside of <code><span class="x"><em>EM-SDK</em></span></code>); this folder will serve as your initial VS Code workspace.</p>
+<p>Next, enter the command <code class="language-em highlight"><span class="si">code <em>workspace</em></span></code> to launch VS Code (where <code class="language-em highlight"><span class="si"><em>workspace</em></span></code> represents a path to the folder created above).&nbsp; Unless you've already installed <strong>EM Builder</strong>, you'll see something like the default <code><span class="x"><em>Welcome</em></span></code> layout shown at the start of this animation:</p>
+<div class="em-screen" id="fig1-dead">
+<p><button onclick="screenSwap(document.getElementById('fig1-dead'), document.getElementById('fig1-live'))"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 5v8l5-4-5-4Z"/></svg></span></button></p>
+<figure>
+<p><a markdown><img alt="Image info" src="../../assets/screen-gifs/installing-01.png" /></a></p>
+<figcaption>Importing Profiles</figcaption>
+</figure>
+</div>
+<div class="em-screen" id="fig1-live" style="display:none">
+<p><button onclick="screenSwap(document.getElementById('fig1-live'), document.getElementById('fig1-dead'))"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.5 12 8.5 6V6m-9 12V6l-8.5 6 8.5 6Z"/></svg></span></button></p>
+<figure id="fig1-live">
+<p><a class="glightbox" href="../../assets/screen-gifs/installing-01.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Image info" src="../../assets/screen-gifs/installing-01.gif" /></a></p>
+<figcaption>Importing Profiles</figcaption>
+</figure>
+</div>
+<p>Before installing <strong>EM Builder</strong>, you'll have to import the file <code><span class="x">EM.code-profile</span></code> found under the <code><span class="x"><em>EM_SDK</em></span></code> folder; this file defines a VS Code <em>profile</em> named <strong>EM</strong>.&nbsp;  To illustrate the process, watch the <span markdown class="em-figcaption">Importing Profiles</span> animation by clicking the <span markdown class="em-screen"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 5v8l5-4-5-4Z"/></svg></span></span> button atop this screen capture.
+k
+When ready, follow the same steps [<strong>&thinsp;Profiles&thinsp;&gt;&thinsp;Import Profiles...&thinsp;</strong>] on your own installation of VS Code.  You can rewind this animation by clicking the <span markdown class="em-screen"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.5 12 8.5 6V6m-9 12V6l-8.5 6 8.5 6Z"/></svg></span></span> button whenever it appears atop the screen capture.&nbsp;  Hint &mdash; you can also click on the image itself to enlarge the view.</p>
+<p>With the <strong>EM</strong> profile in place, you'll finally install the <strong>EM Builder</strong> extension as illustrated in the following animation:</p>
+<div class="em-screen" id="fig2-dead">
+<p><button onclick="screenSwap(document.getElementById('fig2-dead'), document.getElementById('fig2-live'))"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 5v8l5-4-5-4Z"/></svg></span></button></p>
+<figure>
+<p><a markdown><img alt="Image info" src="../../assets/screen-gifs/installing-02.png" /></a></p>
+<figcaption>Installing Extensions</figcaption>
+</figure>
+</div>
+<div class="em-screen" id="fig2-live" style="display:none">
+<p><button onclick="screenSwap(document.getElementById('fig2-live'), document.getElementById('fig2-dead'))"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.5 12 8.5 6V6m-9 12V6l-8.5 6 8.5 6Z"/></svg></span></button></p>
+<figure id="fig2-live">
+<p><a class="glightbox" href="../../assets/screen-gifs/installing-02.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Image info" src="../../assets/screen-gifs/installing-02.gif" /></a></p>
+<figcaption>Installing Extensions</figcaption>
+</figure>
+</div>
+<p>To review these steps, you'll select <strong>Extensions: Install from VSIX</strong> from the VS Code <strong>Command Palette</strong> and locate the (latest) <code><span class="x">em-builder-<em>vers</em>.vsix</span></code> file under the <em>EM-SDK</em> folder. At the end of this sequence, VS Code will prompt you to select one of the <strong>EM Setups</strong> as illustrated in the following animation.</p>
+<div class="em-screen" id="fig3-dead">
+<p><button onclick="screenSwap(document.getElementById('fig3-dead'), document.getElementById('fig3-live'))"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 5v8l5-4-5-4Z"/></svg></span></button></p>
+<figure>
+<p><a markdown><img alt="Image info" src="../../assets/screen-gifs/installing-03.png" /></a></p>
+<figcaption>Selecting Setups</figcaption>
+</figure>
+</div>
+<div class="em-screen" id="fig3-live" style="display:none">
+<p><button onclick="screenSwap(document.getElementById('fig3-live'), document.getElementById('fig3-dead'))"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.5 12 8.5 6V6m-9 12V6l-8.5 6 8.5 6Z"/></svg></span></button></p>
+<figure id="fig3-live">
+<p><a class="glightbox" href="../../assets/screen-gifs/installing-03.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Image info" src="../../assets/screen-gifs/installing-03.gif" /></a></p>
+<figcaption>Selecting Setups</figcaption>
+</figure>
+</div>
+<p>You should select a "default" configuration when the <strong>EM Setup</strong> dropdown appears &mdash; even if you've chosen the  "<span markdown class="em-figcaption">No board at all</span>" option for your target MCU hardware.  If you <em>do</em> plan to connect a target board, however, you will need to assign an appropriate value to the <code><span class="x">ConsolePort</span></code> parameter found in the workspace <code><span class="filename">local.properties</span></code> file as follows: </p>
+<figure id="fig4">
+<p><a class="glightbox" href="../../assets/installing-04.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Image info" src="../../assets/installing-04.png" /></a></p>
+<figcaption>Setting ConsolePort 
+</figcaption>
+</figure>
+<p>Finding the actual value for the <code><span class="x">ConsolePort</span></code> parameter depends, of course, on utilities specific to your PC's operating system.</p>
+<h2 id="ready-set-go">Ready, Set, Go&nbsp;!!!</h2>
+<p>With everything now in place, the time has finally come to start <a href="/using">Using EM</a>&thinsp;....</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 Bob Frankel
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/biosbob" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+        <script src="../extra.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
