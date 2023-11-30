@@ -8,4 +8,48 @@ jobs:
       - run: echo "🎉 The job was triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out em-docs repository code
+        uses: actions/checkout@v4
+        with:
+          repository: em-foundation/em-docs
+          path: em-docs
+      - run: echo "💡 The em-docs repository has been cloned to the runner."
+#      - name: Check out em-foundation.github.io repository code
+#        uses: actions/checkout@v4
+#        with:
+#          path: em-foundation.github.io
+#      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+#      - name: Install python virtual environment and packages
+#        run: |
+#          pushd em-docs
+#          python3 -m pip install --upgrade pip
+#          pip3 install virtualenv
+#          python -m venv pyenv
+#          source pyenv/bin/activate
+#          pip install -r requirements.txt
+#          popd
+#          pushd em-docs/emdown-pkg
+#          make
+#          popd
+#          pushd em-docs/em-lexer-pkg
+#          make
+#          popd
+#      - name: Build the site folder
+#        run: |
+#          pushd em-docs
+#          source pyenv/bin/activate
+#          rm -rf ${{ github.workspace }}/em-foundation.github.io/docs
+#          mkdocs build --site-dir=${{ github.workspace }}/em-foundation.github.io/docs
+#          popd
+#      - name: Save the site folder in workflow artifacts
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: ${{ github.workflow }}_${{ github.ref_name }}_${{ github.run_number }}
+#          path: ${{ github.workspace }}/em-foundation.github.io/docs
+#      - name: Commit and push the changes
+#        run: |
+#          pushd em-foundation.github.io
+#          git commit -am ${{ github.workflow }}_${{ github.ref_name }}_${{ github.run_number }}
+#          # git push origin main
+#          popd
       - run: echo "🍏 This job's status is ${{ job.status }}."
