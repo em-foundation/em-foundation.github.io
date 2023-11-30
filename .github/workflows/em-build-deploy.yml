@@ -11,7 +11,7 @@ jobs:
       - name: Check out em-docs repository code
         uses: actions/checkout@v4
         with:
-          repository: biosbob/em-docs
+          repository: em-foundation/em-docs
           ref: master
           path: em-docs
       - run: echo "💡 The em-docs repository has been cloned to the runner."
