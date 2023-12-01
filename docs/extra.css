@@ -3,7 +3,8 @@
 }
 
 :root {
-    --em-version: "version 24.0.3.202312011842";
+    --em-vers: "24.0.3";
+    --em-time: "202312012330";
 }
 
 [data-md-color-scheme="slate"] {
@@ -56,10 +57,11 @@ a:not([class]) {
 }
 
 div.md-search__inner::after {
-    content: var(--em-version);
+    content: 'version 'var(--em-vers)' \2014  [\2009 'var(--em-time)'\2009]';
     font-size: 0.6rem;
     position: absolute;
     top: 48px;
+    left: 24px;
 }
 
 .md-nav__title[for="__toc"] {
