@@ -5269,19 +5269,45 @@
 
 <h1 id="getting-started-with-em">Getting started with EM</h1>
 <p>Using the EM language and its runtime requires a <em>cross-development</em> environment, in which <em>hosted</em> tooling will build&thinsp;/&thinsp;load executable EM programs onto <em>target</em> hardware. For the host, you'll use a PC running <strong>Windows</strong>, <strong>Linux</strong>, or <strong>macOS</strong>&thinsp;;&nbsp; for the target, you can choose any MCU board for which an <code class="language-em highlight"><span class="n">em$distro</span></code> package already exists.</p>
-<p>The <strong>EM SDK</strong> (described next) comprises a set of software development artifacts which you will download and install onto your host computer. Before doing so, however, ensure that recent versions of <a href="https://nodejs.org/en/download">Node.js</a> and <a href="https://code.visualstudio.com/download">VS Code</a> reside on your PC &ndash; and then install&thinsp;/&thinsp;upgrade these software engines as appropriate.</p>
-<p>At a minimum, the <strong>EM SDK</strong> requires version&thinsp;<code><span class="x">16.3.0</span></code> of Node.js and version&thinsp;<code><span class="x">1.80.0</span></code> of VS Code.&nbsp; Execute the commands <code class="language-em highlight"><span class="si">node</span></code>&thinsp;<code class="language-em highlight"><span class="si">--version</span></code> and <code class="language-em highlight"><span class="si">code</span></code>&thinsp;<code class="language-em highlight"><span class="si">--version</span></code> from your PC's shell to verify this requirement.</p>
+<p>The <strong>EM SDK</strong> (described next) comprises a set of software development artifacts which you'll download and install onto your host computer. Before doing so, however, you'll to install&thinsp;/&thinsp;upgrade the following tooling environments on your PC:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="https://nodejs.org/en/download">Node.js</a></td>
+<td style="text-align: left;">version 16.3.0 or later</td>
+<td style="text-align: left;">execute <code class="language-em highlight"><span class="si">node</span></code>&thinsp;<code class="language-em highlight"><span class="si">--version</span></code> to verify</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://code.visualstudio.com/download">VS Code</a></td>
+<td style="text-align: left;">version 1.80.0 or later</td>
+<td style="text-align: left;">execute <code class="language-em highlight"><span class="si">code</span></code>&thinsp;<code class="language-em highlight"><span class="si">--version</span></code> to verify</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition warning">
-<p class="admonition-title">Do <em>not</em> proceed forward if either of these checks fail&thinsp;!!!</p>
+<p class="admonition-title">Do <em>not</em> proceed forward if either of these verification checks should fail&thinsp;!!!</p>
 </div>
 <h2 id="software-development-kit">Software development kit</h2>
-<p>Before installing the <strong>EM SDK</strong>, first create a sub-folder named&thinsp;<code><span class="x">.em-sdk</span></code> under the <code><span class="x">$HOME</span></code> or <code><span class="x">%HOMEPATH%</span></code> folder on your PC.&nbsp; Going forward, we'll use the symbol <code><span class="x"><em>EM-SDK</em></span></code> as an alias for the <code><span class="x">$HOME/.em-sdk</span></code> or <code><span class="x">%HOMEPATH%\.em-sdk</span></code> folder on your PC.&nbsp;  Next, <code class="language-em highlight"><span class="si">cd</span></code> into <code><span class="x"><em>EM-SDK</em></span></code> and enter the command <code class="language-em highlight"><span class="si">npm</span></code>&thinsp;<code class="language-em highlight"><span class="si">install</span></code>&thinsp;<code class="language-em highlight"><span class="si">em-foundation/em-sdk</span></code> to populate this folder.</p>
-<p>TODO :: verify precise steps, other collateral files</p>
-<p>Under the <code><span class="x"><em>EM-SDK</em></span></code> folder you'll now find a sub-folder named <code><span class="x">tools</span></code>, which contains C&thinsp;/&thinsp;C++ compilers as well as emulation utilities &ndash; all used internally by EM to build&thinsp;/&thinsp;load executable target programs. Already located in a <em>well-known</em> place on your PC, EM requires no further setup of these tools.</p>
-<p>The <code><span class="x"><em>EM-SDK</em></span></code> folder also contains the <strong>EM Builder</strong> VS Code extension &ndash; found in a file named <code><span class="x">em-builder-<em>vers</em>.vsix</span></code>, where <code><span class="x"><em>vers</em></span></code> encodes the extension's major&thinsp;/&thinsp;minor&thinsp;/&thinsp;micro version number followed by a timestamp.  <code><span class="x"><em>EM-SDK</em></span></code> additionally contains a VS Code <em>profile</em> used in conjunction with the <strong>EM Builder</strong> extension &ndash; found in the file named <code><span class="x">EM.code-profile</span></code>.</p>
+<p>To install the <strong>EM SDK</strong>, simply execute the following command from your PC's shell:</p>
+<div class="em-ul">
+<p><code class="language-em highlight"><span class="si">npm</span></code>&thinsp;<code class="language-em highlight"><span class="si">install</span></code>&thinsp;<code class="language-em highlight"><span class="si">em-foundation/em-sdk</span></code></p>
+</div>
+<p>When this command (finally&thinsp;!!!) completes, you'll find a newly-created&thinsp;<code><span class="filename">.em-sdk</span></code> folder under your <code><span class="filename">$HOME</span></code> or <code><span class="filename">%HOMEPATH%</span></code> directory on your PC.&nbsp; Going forward, we'll use the logical name <code><span class="filename">&laquo;EM-SDK&raquo;</span></code> as an alias for the <code><span class="filename">$HOME/.em-sdk</span></code> or <code><span class="filename">%HOMEPATH%\.em-sdk</span></code> folder.</p>
+<p>Under the <code><span class="filename">&laquo;EM-SDK&raquo;</span></code> folder you'll now find a sub-folder named <code><span class="filename">tools</span></code>, which contains C&thinsp;/&thinsp;C++ compilers as well as emulation utilities &ndash; all used internally by EM to build&thinsp;/&thinsp;load executable target programs. Already located in a <em>well-known</em> place on your PC, EM requires no further setup of these tools.</p>
+<p>The <code><span class="filename">&laquo;EM-SDK&raquo;</span></code> folder also contains the <strong>EM Builder</strong> VS Code extension &ndash; found in a file named <code><span class="filename">em-builder-<em>vers</em>.vsix</span></code>, where <code><span class="filename"><em>vers</em></span></code> encodes the extension's major&thinsp;/&thinsp;minor&thinsp;/&thinsp;micro version number followed by a timestamp.  The <code><span class="filename">&laquo;EM-SDK&raquo;</span></code> folder additionally contains a VS Code <em>profile</em> used with <strong>EM Builder</strong>, found in the file named <code><span class="filename">EM.code-profile</span></code>&thinsp;.</p>
+<div class="admonition warning">
+<p class="admonition-title"><code><span class="filename">&laquo;EM-SDK&raquo;</span></code> contains artifacts used by <code class="language-em highlight"><span class="si">npm</span></code> (<code><span class="filename">package.json</span></code>, <code><span class="filename">node_modules/</span></code>) &mdash; please, don't touch&thinsp;!!!</p>
+</div>
 <h2 id="target-mcu-hardware">Target MCU hardware</h2>
 <p>The <strong>EM SDK</strong> &ndash; which you've just installed &ndash; contains <em>all</em> of the tools required to build&thinsp;/&thinsp;load EM programs targeting <em>any</em> of the following boards; you won't need to download any additional, vendor-specific software.&nbsp;  While we encourage you to purchase one (or more) of these boards, you can still learn a great deal about EM <em>without</em> having any target hardware.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">LP-EM-CC2340R5</label><label for="__tabbed_1_2">Board #2</label><label for="__tabbed_1_3">Board #3</label><label for="__tabbed_1_4">No hardware</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">LP-EM-CC2340R5</label><label for="__tabbed_1_2">Board #2</label><label for="__tabbed_1_3">Board #3</label><label for="__tabbed_1_4">no board</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>The Texas Instruments <a href="https://www.ti.com/product/CC2340R5">CC2340R5</a> wireless MCU features an Arm Cortex-M0+ CPU together with a familiar suite of peripherals &ndash; including a generic 2.4&thinsp;GHz radio with BLE 5.x support.  Texas Instruments also offers an inexpensive <a href="https://www.ti.com/tool/LP-EM-CC2340R5">LP-EM-CC2340R5</a> evaluation board in their familiar <strong>LaunchPad</strong> format &ndash; available from TI as well as their distributors.</p>
@@ -5304,7 +5330,7 @@
 <p class="admonition-title">Which MCU board(s) would you want to see EM support&thinsp;???</p>
 </div>
 <h2 id="em-builder-extension">EM Builder extension</h2>
-<p>At this stage, we can launch VS Code and install its <strong>EM Builder</strong> extension. To begin, first create an empty folder <em>anywhere</em> on your PC (outside of <code><span class="x"><em>EM-SDK</em></span></code>); this folder will serve as your initial VS Code workspace.</p>
+<p>At this stage, we can launch VS Code and install its <strong>EM Builder</strong> extension. To begin, first create an empty folder <em>anywhere</em> on your PC (outside of <code><span class="filename">&laquo;EM-SDK&raquo;</span></code>); this folder will serve as your initial VS Code workspace.</p>
 <p>Next, enter the command <code class="language-em highlight"><span class="si">code</span></code>&thinsp;<code class="language-em highlight"><span class="si"><em>workspace</em></span></code> to launch VS Code (where <code class="language-em highlight"><span class="si"><em>workspace</em></span></code> represents a path to the folder created above).&nbsp; Unless you've already installed <strong>EM Builder</strong>, you'll see something like the default <code><span class="x">Welcome</span></code> layout shown within the following screen capture:</p>
 <div class="em-screen" id="fig1-dead">
 <p><button onclick="screenSwap(document.getElementById('fig1-dead'), document.getElementById('fig1-live'))"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 5v8l5-4-5-4Z"/></svg></span></button></p>
@@ -5320,7 +5346,7 @@
 <figcaption>Importing Profiles</figcaption>
 </figure>
 </div>
-<p>Prior to installing <strong>EM Builder</strong>, however, you'll have to import the file <code><span class="x">EM.code-profile</span></code> found under your <code><span class="x"><em>EM_SDK</em></span></code> folder. To illustrate the process, watch the <span class="em-figcaption">Importing Profiles</span> animation above by clicking the <span class="em-screen"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 5v8l5-4-5-4Z"/></svg></span></span> button atop this screen capture.</p>
+<p>Prior to installing <strong>EM Builder</strong>, however, you'll have to import the file <code><span class="filename">EM.code-profile</span></code> found under your <code><span class="filename">&laquo;EM-SDK&raquo;</span></code> folder. To illustrate the process, watch the <span class="em-figcaption">Importing Profiles</span> animation above by clicking the <span class="em-screen"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 5v8l5-4-5-4Z"/></svg></span></span> button atop this screen capture.</p>
 <p>When ready, follow the same steps [<strong>&thinsp;Profiles&thinsp;&gt;&thinsp;Import Profiles...&thinsp;</strong>] on your own installation of VS Code.  You can rewind this animation by clicking the <span class="em-screen"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.5 12 8.5 6V6m-9 12V6l-8.5 6 8.5 6Z"/></svg></span></span> button whenever it appears atop the screen capture.&nbsp;  Hint &ndash; you can also click on the image itself to enlarge the view.</p>
 <p>With the <strong>EM</strong> profile in place, you can finally install the <strong>EM Builder</strong> extension as illustrated in the following animation:</p>
 <div class="em-screen" id="fig2-dead">
@@ -5337,7 +5363,7 @@
 <figcaption>Installing Extensions</figcaption>
 </figure>
 </div>
-<p>To review these steps, you'll select <strong>Extensions: Install from VSIX</strong> from the VS Code <strong>Command Palette</strong> and locate the (latest) <code><span class="x">em-builder-<em>vers</em>.vsix</span></code> file under the <em>EM-SDK</em> folder. At the end of this sequence, VS Code will prompt you to select one of the <strong>EM Setups</strong> as illustrated in the following animation.</p>
+<p>To review these steps, you'll select <strong>Extensions: Install from VSIX</strong> from the VS Code <strong>Command Palette</strong> and locate the (latest) <code><span class="filename">em-builder-<em>vers</em>.vsix</span></code> file under the <code><span class="filename">&laquo;EM-SDK&raquo;</span></code> folder. At the end of this sequence, VS Code will prompt you to select one of the <strong>EM Setups</strong> as illustrated in the following animation.</p>
 <div class="em-screen" id="fig3-dead">
 <p><button onclick="screenSwap(document.getElementById('fig3-dead'), document.getElementById('fig3-live'))"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 5v8l5-4-5-4Z"/></svg></span></button></p>
 <figure>
@@ -5352,7 +5378,7 @@
 <figcaption>Selecting Setups</figcaption>
 </figure>
 </div>
-<p>You should select a "default" configuration when the <strong>EM Setup</strong> dropdown appears &ndash; even if you've chosen the  "<span class="em-figcaption">No board at all</span>" option for your target MCU hardware.  If you <em>do</em> plan to connect a target board, however, you'll also need to assign an appropriate value to the <code><span class="x">ConsolePort</span></code> parameter found in the workspace <code><span class="filename">local.properties</span></code> file as follows: </p>
+<p>You should select a "default" configuration when the <strong>EM Setup</strong> dropdown appears &ndash; even if you've chosen the so-called <span class="em-figcaption">no board</span> option for your target MCU hardware.  If you <em>do</em> plan to connect a target board, however, you'll also need to assign an appropriate value to the <code><span class="x">ConsolePort</span></code> parameter found in the workspace <code><span class="filename">local.properties</span></code> file as follows: </p>
 <figure id="fig4">
 <p><a class="glightbox" href="../../assets/installing-04.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Image info" src="../../assets/installing-04.png" /></a></p>
 <figcaption>Setting ConsolePort 

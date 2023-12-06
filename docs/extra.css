@@ -4,7 +4,7 @@
 
 :root {
     --em-vers: "24.0.3";
-    --em-time: "202312060042";
+    --em-time: "202312061919";
 }
 
 [data-md-color-scheme="slate"] {
@@ -87,7 +87,7 @@ div.md-tooltip__inner {
 }
 
 .md-typeset p code {
-    background-color: inherit;
+    background-color: transparent;
     font-size: 90%;
     padding: 0 .1em;
 }
