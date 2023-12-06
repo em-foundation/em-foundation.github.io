@@ -5238,7 +5238,7 @@
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="x">    </span><span class="k">var</span><span class="x"> </span><span class="n">count</span><span class="x">: </span><span class="kt">uint8</span><span class="x"> = 10</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="x">    </span><span class="k">function</span><span class="x"> </span><span class="nf">tickFxn</span><span class="x">: </span><span class="nn">TickerMgr</span><span class="x">.</span><span class="n">TickFxn</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="x">    </span><span class="k">function</span><span class="x"> </span><span class="nf">tickCb</span><span class="x">: </span><span class="nn">TickerMgr</span><span class="x">.</span><span class="nc">TickCallback</span>
 </span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a>
 </span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="k">end</span>
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a>
@@ -5248,16 +5248,16 @@
 </span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a>
 </span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="k">def</span><span class="x"> </span><span class="nf">em$run</span><span class="x">()</span>
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="x">    </span><span class="nn">CoreBench</span><span class="x">.</span><span class="nf">setup</span><span class="x">()</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="x">    </span><span class="n">ticker</span><span class="x">.</span><span class="nf">start</span><span class="x">(256, </span><span class="n">tickFxn</span><span class="x">)</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="x">    </span><span class="n">ticker</span><span class="x">.</span><span class="nf">start</span><span class="x">(256, </span><span class="nf">tickCb</span><span class="x">)</span>
 </span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="x">    </span><span class="nn">ProcMgr</span><span class="x">.</span><span class="nf">run</span><span class="x">()</span>
 </span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="k">end</span>
 </span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="k">def</span><span class="x"> </span><span class="nf">tickFxn</span><span class="x">()</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="k">def</span><span class="x"> </span><span class="nf">tickCb</span><span class="x">()</span>
 </span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="x">    </span><span class="nb">%%[d]</span>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="x">    </span><span class="k">auto</span><span class="x"> </span><span class="n">crc</span><span class="x"> = </span><span class="n">CoreBench</span><span class="x">.</span><span class="n">run</span><span class="x">()</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="x">    </span><span class="k">auto</span><span class="x"> </span><span class="n">crc</span><span class="x"> = </span><span class="nn">CoreBench</span><span class="x">.</span><span class="nf">run</span><span class="x">()</span>
 </span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="x">    </span><span class="nb">printf</span><span class="x"> </span><span class="s">&quot;crc = %04x\n&quot;</span><span class="x">, </span><span class="n">crc</span>
 </span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="x">    </span><span class="k">return</span><span class="x"> </span><span class="k">if</span><span class="x"> --</span><span class="n">count</span>
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="x">    </span><span class="n">ticker</span><span class="x">.</span><span class="n">stop</span><span class="x">()</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="x">    </span><span class="n">ticker</span><span class="x">.</span><span class="nf">stop</span><span class="x">()</span>
 </span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="x">    </span><span class="nb">halt</span>
 </span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="k">end</span>
 </span></code></pre></div></td></tr></table></div>
