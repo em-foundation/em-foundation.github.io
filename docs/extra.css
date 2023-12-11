@@ -3,8 +3,8 @@
 }
 
 :root {
-    --em-vers: "24.0.3";
-    --em-time: "202312062342";
+    --em-vers: "24.0.5";
+    --em-time: "202312112203";
 }
 
 [data-md-color-scheme="slate"] {
@@ -146,6 +146,11 @@ span.em-figcaption {
 
 span.em-float-right {
     float: right;
+}
+
+span.em-walk {
+    float: right;
+    font-size: 180%;
 }
 
 .em-label {
