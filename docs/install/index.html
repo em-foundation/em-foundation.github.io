@@ -788,6 +788,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -857,6 +859,26 @@
   
   <span class="md-ellipsis">
     Energy Consuption
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advancing/syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Language Syntax
   </span>
   
 
@@ -5019,8 +5041,12 @@
 </details>
 <h2 id="target-mcu-hardware">Target MCU hardware</h2>
 <p>The <strong>EM SDK</strong> &ndash; which you've just installed &ndash; contains <em>all</em> of the tools required to build&thinsp;/&thinsp;load EM programs targeting <em>any</em> of the following boards; you won't need to download any additional, vendor-specific software.&nbsp;  While we encourage you to purchase one (or more) of these boards, you can still learn a great deal about EM <em>without</em> having any target hardware.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">LP-EM-CC2340R5</label><label for="__tabbed_2_2">Board #2</label><label for="__tabbed_2_3">Board #3</label><label for="__tabbed_2_4">no board</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">**&thinsp;FAST-TRACK&thinsp;**</label><label for="__tabbed_2_2">LP-EM-CC2340R5</label><label for="__tabbed_2_3">Board #2</label><label for="__tabbed_2_4">Board #3</label></div>
 <div class="tabbed-content">
+<div class="tabbed-block">
+<p>Nothing to buy, of course&thinsp;!!!&nbsp;  You can still <em>build</em> executable programs using any <code class="language-em highlight"><span class="n">em$distro</span></code> package within the <strong>EM SDK</strong>; you just can't <em>load</em> these programs onto target hardware.</p>
+<p>Familiarize yourself, however, with the <strong>Setups</strong> available for one (or more) of the target hardware tracks enumerated above.</p>
+</div>
 <div class="tabbed-block">
 <p>The Texas Instruments <a href="https://www.ti.com/product/CC2340R5">CC2340R5</a> wireless MCU features an Arm Cortex-M0+ CPU together with a familiar suite of peripherals &ndash; including a generic 2.4&thinsp;GHz radio with BLE 5.x support.  Texas Instruments also offers an inexpensive <a href="https://www.ti.com/tool/LP-EM-CC2340R5">LP-EM-CC2340R5</a> evaluation board in their familiar <strong>LaunchPad</strong> format &ndash; available from TI as well as their distributors.</p>
 <p>You should also purchase this <a href="https://www.ti.com/tool/LP-XDS110ET">emulator board</a> from TI &ndash; unless you already own a "classic" TI LaunchPad with on-board XDS110 support.  In that case, you can easily connect this legacy LP to your new LP-EM-CC2340R5 board using a cable supplied by TI.  If you haven't used an XDS110 before, run the <code><span class="filename">one_time_setup</span></code> script found in <code><span class="filename">&laquo;EM-SDK&raquo;/tools/ti-uniflash</span></code>.</p>
@@ -5061,9 +5087,6 @@
 </div>
 <div class="tabbed-block">
 <p>TBD &ndash; <em>open for suggestions</em></p>
-</div>
-<div class="tabbed-block">
-<p>Nothing to buy, of course&thinsp;!!!&nbsp;  You can still <em>build</em> executable programs using any <code class="language-em highlight"><span class="n">em$distro</span></code> package within the <strong>EM SDK</strong>; you just can't <em>load</em> these programs onto target hardware.  You'll also have access to all <strong>Setups</strong> associated with each <strong>EM-SDK</strong> distro.</p>
 </div>
 </div>
 </div>
@@ -5122,7 +5145,7 @@
 <figcaption>Selecting Setups</figcaption>
 </figure>
 </div>
-<p>You should select a "default" configuration when the <strong>EM Setup</strong> dropdown appears &ndash; even if you've chosen the so-called <span class="em-figcaption">no board</span> option for your target MCU hardware.  If you <em>do</em> plan to connect a target board, however, you'll also need to assign an appropriate value to the <code><span class="x">ConsolePort</span></code> parameter found in the workspace <code><span class="filename">local.properties</span></code> file as follows: </p>
+<p>You should select a "default" configuration when the <strong>EM Setup</strong> dropdown appears &ndash; even if you've chosen the <a href="#target-mcu-hardware">**&thinsp;FAST-TRACK&thinsp;**</a> option for your target MCU hardware.  If you <em>do</em> plan to connect a target board, however, you'll also need to assign an appropriate value to the <code><span class="x">ConsolePort</span></code> parameter found in the workspace <code><span class="filename">local.properties</span></code> file as follows: </p>
 <figure id="fig4">
 <p><a class="glightbox" href="/assets/installing-04.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Image info" src="/assets/installing-04.png" /></a></p>
 <figcaption>Setting ConsolePort 
@@ -5161,7 +5184,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2023 The EM Foundation
+      Copyright &copy; 2023 &ndash; The EM Foundation
     </div>
   
   
@@ -5181,7 +5204,7 @@
       
       
     
-    <a href="https://www.linkedin.com/in/bob-frankel-751a815/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+    <a href="https://www.linkedin.com/company/the-em-foundation/about/?viewAsMember=true" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
     </a>
   

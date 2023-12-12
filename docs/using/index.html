@@ -722,6 +722,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -791,6 +793,26 @@
   
   <span class="md-ellipsis">
     Energy Consuption
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advancing/syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Language Syntax
   </span>
   
 
@@ -4842,12 +4864,15 @@
 
 
 <h1 id="writing-portable-applications-in-em">Writing portable applications in EM</h1>
-<p>If you've made it this far, let's hit the ground running and starting coding&thinsp;!!!&nbsp;&nbsp;  This document will first familiarize you with the mechanics of viewing, editing, building, and loading EM programs and their constituent units using the <strong>EM Builder</strong> extension for VS Code. If you haven't already worked with VS Code, the web abounds with tutorials and references for this ever-popular IDE.</p>
-<p>The main portion of this document comprises a series of <em>tours</em> that visit some basic programming examples &ndash; curated to introduce elements of the EM runtime environment, as well as to reinforce common coding idioms of the EM language.  To support these documentation resources, <strong>EM Builder</strong> includes a "tour guide" utility that walks you through this material in a somewhat specialized fashion.</p>
+<p>If you've made it this far, let's hit the ground running and starting coding&thinsp;!!!&nbsp;&nbsp;  This document will first familiarize you with the mechanics of viewing, editing, building, and loading EM programs and their constituent units using the <strong>EM Builder</strong> extension for VS Code. If you haven't worked with VS Code, the web abounds with tutorials&thinsp;+&thinsp;references for this ever-popular IDE.</p>
+<p class="annotate">The main portion of this document comprises a series of <em>tours</em> that visit some basic programming examples &ndash; curated to introduce elements of the EM runtime environment, as well as to reinforce common coding idioms of the EM language(1).  To support these documentation resources, <strong>EM Builder</strong> includes a "tour guide" utility that walks you through this material in a somewhat specialized fashion.</p>
+<ol>
+<li>consult <a class="em-link" href="/advancing/syntax">Language Syntax</a> as a reference</li>
+</ol>
 <div class="em-ul">
 <p>If you've chosen to bypass <a class="em-link" href="/install">Installing EM</a> for now, a quick read through this document would still have benefit &ndash; even if you can't execute real software on real hardware.</p>
 </div>
-<p>If you have elected to install <strong>EM Builder</strong> &ndash; but haven't received your hardware or else prefer the <span class="em-figcaption">no board</span> track &ndash; you can still <em>build</em> the programs featured in any of the tours.  Until your board arrives and you can actually <em>load</em> these programs, studying the logic capture(s) associated with each example should help bridge the gap.</p>
+<p>If you have elected to install <strong>EM Builder</strong> &ndash; but haven't received your hardware or else prefer the <a href="#target-mcu-hardware">**&thinsp;FAST-TRACK&thinsp;**</a> option &ndash; you can still <em>build</em> the programs featured in any of the tours.  Until your board arrives and you can actually <em>load</em> these programs, studying the logic capture(s) associated with each example should help bridge the gap.</p>
 <div class="admonition bulb">
 <p class="admonition-title">These captures in fact reveal subtle timing details otherwise invisible to the naked eye.</p>
 </div>
@@ -4890,7 +4915,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2023 The EM Foundation
+      Copyright &copy; 2023 &ndash; The EM Foundation
     </div>
   
   
@@ -4910,7 +4935,7 @@
       
       
     
-    <a href="https://www.linkedin.com/in/bob-frankel-751a815/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+    <a href="https://www.linkedin.com/company/the-em-foundation/about/?viewAsMember=true" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
     </a>
   

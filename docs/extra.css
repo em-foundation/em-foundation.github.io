@@ -4,7 +4,7 @@
 
 :root {
     --em-vers: "24.0.5";
-    --em-time: "202312112203";
+    --em-time: "202312122324";
 }
 
 [data-md-color-scheme="slate"] {
@@ -146,6 +146,11 @@ span.em-figcaption {
 
 span.em-float-right {
     float: right;
+}
+
+iframe.em-frame {
+    width: 100%;
+    height: 280px;
 }
 
 span.em-walk {
