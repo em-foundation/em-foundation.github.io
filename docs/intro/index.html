@@ -4918,6 +4918,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-history-of-em" class="md-nav__link">
+    The history of EM
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4991,14 +4998,14 @@
 </table>
 <p>Features <span class="twemoji em-label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 17h-2V9h-2V7h4m5-4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"/></svg></span> through <span class="twemoji em-label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 17h-2v-4H9V7h2v4h2V7h2m4-4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"/></svg></span> would collectively minimize the number of logic gates and memory cells required to implement this MCU in silicon &ndash; resulting in a smaller chip die compared with a more fully-featured design, which (holding other factors constant) forecasts lower manufacturing costs as well as lower leakage power.</p>
 <p>To support "sleepy applications" with short active-duty cycles, feature <span class="twemoji em-label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 9h-4v2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H9v-2h4v-2H9V7h6m4-4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"/></svg></span> enables our MCU to execute for years on small batteries &ndash; or even indefinitely using harvested energy. Because of its relatively small die-size, our MCU could likely consume &le;&thinsp;1&mu;W of power when sleeping; and by retaining all program state in the (small) TCMs of <span class="twemoji em-label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 11a2 2 0 0 1-2 2h-2v2h4v2H9v-4a2 2 0 0 1 2-2h2V9H9V7h4a2 2 0 0 1 2 2m4-6H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"/></svg></span>, our MCU can quickly return to its fully-powered active mode when awoken by an event.</p>
-<p class="annotate">Feature <span class="twemoji em-label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 9h-4v2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h4m4-4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-8 12h2v-2h-2v2Z"/></svg></span>, however, seems at odds with achieving an energy-efficient design &ndash; faster clocks proportionally increase switching (dynamic) power consumption; but since the CPU can access its TCMs without waiting, increased clock speed also results in proportionally faster software execution &ndash; enabling our duty-cycled application to spend <em>more</em> time in deep-sleep. In practice, this approach actually <em>improves</em> overall energy(1)utilization by reducing the (static) overhead of leakage power during active execution periods.</p>
+<p class="annotate">Feature <span class="twemoji em-label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 9h-4v2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h4m4-4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-8 12h2v-2h-2v2Z"/></svg></span>, however, seems at odds with achieving an energy-efficient design &ndash; faster clocks proportionally increase switching (dynamic) power consumption; but since the CPU can access its TCMs without stalling, increased clock speed also results in proportionally faster software execution &ndash; enabling our duty-cycled application to spend <em>more</em> time in deep-sleep. In practice, this approach actually <em>improves</em> overall energy(1)utilization by reducing the (static) overhead of leakage power during active execution periods.</p>
 <ol>
 <li>E = &int;&thinsp; (P<sub>leakage</sub> + P<sub>switching</sub>) <em>dt</em></li>
 </ol>
 <p>Given that feature <span class="twemoji em-label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 9h-4v2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h4m4-4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-8 12h2v-2h-2v2Z"/></svg></span> enables faster execution, the peripherals of <span class="twemoji em-label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 17h-2v-4H9V7h2v4h2V7h2m4-4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"/></svg></span> can now leverage software running on the main CPU core to perform functions that would otherwise require additional hardware &ndash; such as advanced encryption modes or the upper layers of a comm stack.  Unlike conventional cryto or radio blocks (which often contain their own dedicated cores) our peripherals embody a "RISC-like" approach which efficiently implements only rudimentary primitives in hardware and then relegates higher-levels functions to software.</p>
-<p>EM programs that target our MCU will often exhibit a simple, cyclic structure:</p>
+<p>EM programs that target our idealized MCU will often exhibit a simple, cyclic structure:</p>
 <div class="em-ul">
-<p>awaken from deep-sleep</p>
+<p>wake-up from deep-sleep</p>
 <p>acquire data from the environment</p>
 <p>analyze this data using an algorithm</p>
 <p>transmit results (wirelessly) to the edge</p>
@@ -5029,7 +5036,7 @@
 <p>Here again, the <em>tiny-code</em> of EM serves as a catalyst which can drive novel RISC-V <em>tiny-chips</em>.</p>
 </details>
 <h2 id="technical-overview">Technical overview</h2>
-<p>Building upon the <em>tiny&nbsp;code&thinsp;&rarr;&thinsp;tiny&nbsp;chips</em> premise behind EM, let's dive into some technical details&hellip;.&nbsp;  The following chapters each focus on a particular aspect of the language and its runtime enviorment, and collectively provide a technical overview of the EM platform:</p>
+<p>Building upon the <em>tiny&nbsp;code&thinsp;&rarr;&thinsp;tiny&nbsp;chips</em> premise behind EM, let's dive into some technical details.&nbsp;  The following chapters each focus on a particular aspect of the language and its runtime enviorment, and collectively provide a technical overview of the EM platform:</p>
 <table>
 <thead>
 <tr>
@@ -5040,19 +5047,19 @@
 <tbody>
 <tr>
 <td style="text-align: left;">1)&emsp; <strong><a class="em-link" href="to-1/">EM modules &amp; interfaces</a></strong></td>
-<td style="text-align: left;">&mdash; <span class="em-float-right">The client/server dichotomy</span></td>
+<td style="text-align: left;">&bull;&bull;&bull; <span class="em-float-right">The client/server dichotomy&emsp;&emsp;</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">2)&emsp; <strong><a class="em-link" href="to-2/">EM composites &amp; templates</a></strong></td>
-<td style="text-align: left;">&mdash; <span class="em-float-right">Assembling application elements</span></td>
+<td style="text-align: left;">&bull;&bull;&bull; <span class="em-float-right">Assembling application elements&emsp;&emsp;</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">3)&emsp; <strong><a class="em-link" href="to-3/">EM program life-cycle </a></strong></td>
-<td style="text-align: left;">&mdash; <span class="em-float-right">From build-time to run-time</span></td>
+<td style="text-align: left;">&bull;&bull;&bull; <span class="em-float-right">From build-time to run-time&emsp;&emsp;</span></td>
 </tr>
 <tr>
 <td style="text-align: left;">4)&emsp; <strong><a class="em-link" href="to-4/">EM runtime bundles</a></strong></td>
-<td style="text-align: left;">&mdash; <span class="em-float-right">Software platform content</span></td>
+<td style="text-align: left;">&bull;&bull;&bull; <span class="em-float-right">Software platform content&emsp;&emsp;</span></td>
 </tr>
 </tbody>
 </table>
@@ -5078,17 +5085,19 @@
 </span></code></pre></div></td></tr></table></div>
 <p>Even if you don't plan to (initially) install and use EM, these fragments should give you an intuitive sense of the language &ndash; which relies upon familiar programming constructs (such as seen at line <span class="em-lineref"><a href="#__codelineno-0-8">8</a></span> above) that you've likely encountered elsewhere.</p>
 <p>So with that, let's move onward to <a href="to-1/">Chapter 1</a> and begin our technical overview of EM.</p>
-<details class="abstract">
-<summary>EM's origin story<span id="origin-story"></summary>
+<h2 id="the-history-of-em">The history of EM</h2>
+<div class="admonition abstract">
+<p class="admonition-title">EM's origin story<span id="origin-story"></p>
 <p>The EM programming language first appeared at UC Santa Barbara in 2010, where undergraduate students taking CS190C&thinsp;/&thinsp;ECE1940 would develop “real-world” embedded applications targeting resource-constrained MCUs &ndash; with all software written in EM, of course, using this (now outdated) <a href="https://tinyurl.com/bdftm8yu">language primer</a> as a guide.</p>
 <p>The EM language had emerged through deep discussion and intense interaction with Amichai Amar &ndash; a UCSB PhD candidate at that time.  Consult his <a href="https://tinyurl.com/yxd8s3tr">thesis</a> for more details on the outcome of our undergraduate course, as well as a more comprehensive exposition of programming resource-constrained MCUs using EM.</p>
-<p>But the true EM backstory actually began decades before its debut at UCSB.  In 1998, Texas Instruments <a href="https://www.eetimes.com/texas-instruments-to-acquire-spectron-microsystems-from-dialogic-corporation/">acquired</a> Spectron Microsystems &ndash; whose SPOX and DSP/BIOS products had already emerged as de facto industry standards.  This milestone validated the importance of <em>software technology</em> in further solidifying TI's <a href="https://www.cascade.app/studies/texas-instruments-strategy-study#Texas-Instruments-Acquisition-Strategy-In-The-Late-20th-Century">leadership</a> as a DSP silicon vendor, and in fact triggered a flurry of similar acquisitions during the dot-com boom.</p>
-<p>Once inside TI, the Spectron team broadened the application of its patented configuration technology &ndash; which had already enabled DSP/BIOS to fit comfortably within the 2&thinsp;K boot ROM of broadly-deployed, low-power DSPs. This effort culminated in the open-source <a href="https://wiki.eclipse.org/DSDP/RTSC">RTSC</a> project, hosted at the Eclipse Foundation beginning in 2007 and still used today within TI software products.  But RTSC fell a bit short in fulfilling its vision &ndash; and provided some much needed impetus for the birth of EM a few years later.</p>
-<p>EM's coming-of-age began in 2011 with the founding of Emmoco &ndash; an early player offering an embedded&thinsp;&harr;&thinsp;mobile connectivity stack targeting new TI wireless MCUs which supported the emerging BLE standard.  Acquired by <a href="https://www.globenewswire.com/news-release/2016/01/12/1024463/0/en/Shelfbucks-Acquires-Bluetooth-Smart-Platform-Company-Emmoco.html">Shelfbucks</a> in late 2015, the Emmoco stack ultimately evolved to support long-range, low-power subGHz radios in which <em>one</em> cloud-connected HUB can interact with (say) 10,000 TAGs in a 500,000 sq ft venue.</p>
+<p>But the true EM backstory actually began decades before its debut at UCSB.  In 1998, Texas Instruments <a href="https://www.eetimes.com/texas-instruments-to-acquire-spectron-microsystems-from-dialogic-corporation/">acquired</a> Spectron Microsystems &ndash; whose SPOX and DSP&thinsp;/&thinsp;BIOS products had already emerged as de facto industry standards.  This milestone validated the importance of <em>software technology</em> in further solidifying TI's <a href="https://www.cascade.app/studies/texas-instruments-strategy-study#Texas-Instruments-Acquisition-Strategy-In-The-Late-20th-Century">leadership</a> as a DSP silicon vendor, and in fact triggered a flurry of similar acquisitions during the dot-com boom.</p>
+<p>Once inside TI, the Spectron team broadened the application of its patented configuration technology &ndash; which had already enabled DSP&thinsp;/&thinsp;BIOS to fit comfortably within the 2&thinsp;K boot ROM of broadly-deployed, low-power DSPs. This effort culminated in the open-source <a href="https://wiki.eclipse.org/DSDP/RTSC">RTSC</a> project, hosted at the Eclipse Foundation beginning in 2007 and still used today within TI software products.  But RTSC fell a bit short in fulfilling its vision &ndash; and provided some much needed impetus for the birth of EM a few years later.</p>
+<p>EM's coming-of-age began in 2011 with the founding of Emmoco &ndash; an early player offering an embedded&thinsp;&harr;&thinsp;mobile connectivity stack targeting new TI wireless MCUs which supported the emerging BLE standard.  Acquired by <a href="https://www.globenewswire.com/news-release/2016/01/12/1024463/0/en/Shelfbucks-Acquires-Bluetooth-Smart-Platform-Company-Emmoco.html">Shelfbucks</a> in late 2015, the Emmoco stack ultimately evolved to support long-range, low-power subGHz radios in which just <em>one</em> cloud-connected HUB could interact with (say) 10,000 TAGs in a 500,000 sq ft venue.</p>
 <p>After Shelfbucks ceased operations in 2019 &ndash; and thanks to some legacy licensing agreements &ndash; EM found its way onto other low-power wireless MCUs from vendors such as NXP, Analog Devices, and ON Semiconductor; EM's foray into the world of RISC-V (as detailed in an earlier note) also began in this time frame. Targeting very high-volume applications for over a decade now, EM's uncanny ability to reduce firmware footprint proved critical in keeping system size, power, and cost in check.</p>
-<p>As of today, EM has supported more than twenty 8&thinsp;/&thinsp;16&thinsp;/&thinsp;32-bit MCUs from almost a dozen silicon vendors. The EM language translator &ndash; which ultimately outputs ANSI C&thinsp;/&thinsp;C++ code for portability &ndash; has also targeted the most popular toolchains for embedded development (GCC, IAR, Keil, LLVM). Thanks to a recent rewrite of the translator into TypeScript, EM now enjoys robust language support within the VS Code IDE.</p>
-<p>More important, perhaps, just a handful of EM programmers have developed thousands of EM modules used (and often <em>re-used</em>&thinsp;) across a broad spectrum of IoT applications targeting these MCUs. But due to these applications' proprietary nature, the EM language and its runtime has remained closed &ndash; until now&thinsp;!!!</p>
-</details>
+<p>As of today, EM has supported more than twenty 8&thinsp;/&thinsp;16&thinsp;/&thinsp;32-bit MCUs from almost a dozen silicon vendors. The EM language translator &ndash; which ultimately outputs ANSI C&thinsp;/&thinsp;C++ code for portability &ndash; has also targeted the most popular toolchains for embedded development (GCC, IAR, Keil, LLVM).&nbsp; Thanks to a recent rewrite of the translator into TypeScript, EM now enjoys robust language support within the VS Code IDE.
+xx
+More important, perhaps, just a handful of EM programmers have developed thousands of EM modules used (and often <em>re-used</em>&thinsp;) across a broad spectrum of IoT applications targeting these MCUs. But due to the proprietary nature of these applications, the EM language and its runtime has remained closed &ndash; until now&thinsp;!!!</p>
+</div>
 <div class="em-break"></div>
 
 <p><a class="em-link" href="/intro/to-1"><span class="em-walk"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M208 96a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm-84.3 104.5c1-.4 1.9-.8 2.9-1.2l-16.9 63.5c-5.6 21.1-.1 43.6 14.7 59.7l70.7 77.1 22 88.1c4.3 17.1 21.7 27.6 38.8 23.3s27.6-21.7 23.3-38.8l-23-92.1c-1.9-7.8-5.8-14.9-11.2-20.8l-49.5-54 19.3-65.5 9.6 23c4.4 10.6 12.5 19.3 22.8 24.5l26.7 13.3c15.8 7.9 35 1.5 42.9-14.3s1.5-35-14.3-42.9L281 232.7l-15.3-36.8c-17.2-41.1-57.4-67.9-102-67.9-22.8 0-45.3 4.8-66.1 14l-8 3.5c-32.9 14.6-58.1 42.4-69.4 76.5l-2.6 7.8c-5.6 16.8 3.5 34.9 20.2 40.5s34.9-3.5 40.5-20.2l2.6-7.8c5.7-17.1 18.3-30.9 34.7-38.2l8-3.5zm-30 135.1-25 62.4-59.3 59.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l61.6-61.7c4.6-4.6 8.2-10.1 10.6-16.1l14.5-36.2-40.7-44.4c-2.5-2.7-4.8-5.6-7-8.6zm456.9-182.2c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l25.4 25.3H384c-17.7 0-32 14.3-32 32s14.3 32 32 32h146.7l-25.4 25.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l80-80c12.5-12.5 12.5-32.8 0-45.3l-80-80z"/></svg></span></span></a></p>
