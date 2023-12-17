@@ -57,6 +57,16 @@
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-DX6RZ0VNPT"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-DX6RZ0VNPT",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-DX6RZ0VNPT",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -2748,10 +2758,6 @@
       
         
       
-        
-      
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -3336,26 +3342,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../em.utils/LedBlinkerAux/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    LedBlinkerAux
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../em.utils/LedBlinkerI/" class="md-nav__link">
         
   
@@ -3461,26 +3447,6 @@
   
   <span class="md-ellipsis">
     LoaderAuxI
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../em.utils/LoaderP/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    LoaderP
   </span>
   
 
@@ -4946,31 +4912,33 @@
 <span class="normal"><a href="#__codelineno-0-24">24</a></span>
 <span class="normal"><a href="#__codelineno-0-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">package</span><span class="x"> </span><span class="n">em</span><span class="x">.</span><span class="n">lang</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">import</span><span class="x"> </span><span class="n">AssertProviderI</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">import</span><span class="x"> </span><span class="n">AssertProviderN</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">import</span><span class="x"> </span><span class="nn">AssertProviderI</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">import</span><span class="x"> </span><span class="nn">AssertProviderN</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="k">module</span><span class="x"> </span><span class="n">Assert</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="k">module</span><span class="x"> </span><span class="nn">Assert</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="x">    </span><span class="k">proxy</span><span class="x"> </span><span class="n">Provider</span><span class="x">: </span><span class="n">AssertProviderI</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="x">    </span><span class="k">proxy</span><span class="x"> </span><span class="nn">Provider</span><span class="x">: </span><span class="nn">AssertProviderI</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="x">    </span><span class="k">function</span><span class="x"> </span><span class="n">enabled</span><span class="x">(): </span><span class="kt">bool</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="x">    </span><span class="k">function</span><span class="x"> </span><span class="n">trigger</span><span class="x">(</span><span class="n">upath</span><span class="x">: </span><span class="kt">atom_t</span><span class="x">, </span><span class="n">line</span><span class="x">: </span><span class="kt">uint16</span><span class="x">, </span><span class="n">msg</span><span class="x">: </span><span class="kt">atom_t</span><span class="x"> = 0, </span><span class="n">arg1</span><span class="x">: </span><span class="kt">iarg_t</span><span class="x"> = 0, </span><span class="n">arg2</span><span class="x">: </span><span class="kt">iarg_t</span><span class="x"> = 0)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="x">    </span><span class="k">function</span><span class="x"> </span><span class="nf">enabled</span><span class="x">(): </span><span class="kt">bool</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="x">    </span><span class="k">function</span><span class="x"> </span><span class="nf">trigger</span><span class="x">(</span><span class="n">upath</span><span class="x">: </span><span class="kt">atom_t</span><span class="x">, </span><span class="n">line</span><span class="x">: </span><span class="kt">uint16</span><span class="x">, </span><span class="n">msg</span><span class="x">: </span><span class="kt">atom_t</span><span class="x"> = 0, </span><span class="n">arg1</span><span class="x">: </span><span class="kt">iarg_t</span><span class="x"> = 0, </span><span class="n">arg2</span><span class="x">: </span><span class="kt">iarg_t</span><span class="x"> = 0)</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="k">end</span>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="k">def</span><span class="x"> </span><span class="n">em$configure</span><span class="x">()</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="x">    </span><span class="n">Provider</span><span class="x"> ?= </span><span class="n">AssertProviderN</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="k">def</span><span class="x"> </span><span class="nf">em$configure</span><span class="x">()</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="x">    </span><span class="nn">Provider</span><span class="x"> ?= </span><span class="nn">AssertProviderN</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="k">end</span>
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="k">def</span><span class="x"> </span><span class="n">enabled</span><span class="x">()</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="x">    </span><span class="k">return</span><span class="x"> </span><span class="n">Provider</span><span class="x">.</span><span class="n">enabled</span><span class="x">()</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="k">def</span><span class="x"> </span><span class="nf">enabled</span><span class="x">()</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="x">    </span><span class="k">return</span><span class="x"> </span><span class="nn">Provider</span><span class="x">.</span><span class="nf">enabled</span><span class="x">()</span>
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="k">end</span>
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="k">def</span><span class="x"> </span><span class="n">trigger</span><span class="x">(</span><span class="n">upath</span><span class="x">, </span><span class="n">line</span><span class="x">, </span><span class="n">msg</span><span class="x">, </span><span class="n">arg1</span><span class="x">, </span><span class="n">arg2</span><span class="x">)</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="x">    </span><span class="n">Provider</span><span class="x">.</span><span class="n">trigger</span><span class="x">(</span><span class="n">upath</span><span class="x">, </span><span class="n">line</span><span class="x">, </span><span class="n">msg</span><span class="x">, </span><span class="n">arg1</span><span class="x">, </span><span class="n">arg2</span><span class="x">) </span><span class="k">if</span><span class="x"> </span><span class="n">enabled</span><span class="x">()</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="k">def</span><span class="x"> </span><span class="nf">trigger</span><span class="x">(</span><span class="n">upath</span><span class="x">, </span><span class="n">line</span><span class="x">, </span><span class="n">msg</span><span class="x">, </span><span class="n">arg1</span><span class="x">, </span><span class="n">arg2</span><span class="x">)</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="x">    </span><span class="nn">Provider</span><span class="x">.</span><span class="nf">trigger</span><span class="x">(</span><span class="n">upath</span><span class="x">, </span><span class="n">line</span><span class="x">, </span><span class="n">msg</span><span class="x">, </span><span class="n">arg1</span><span class="x">, </span><span class="n">arg2</span><span class="x">) </span><span class="k">if</span><span class="x"> </span><span class="nf">enabled</span><span class="x">()</span>
 </span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="k">end</span>
 </span></code></pre></div></td></tr></table></div>
 
+
+  
 
 
 
