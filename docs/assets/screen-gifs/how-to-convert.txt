@@ -1,2 +1,0 @@
-convert name-ORIG.gif -loop 1 name.gif
-convert 'name.gif[0]' name.png
