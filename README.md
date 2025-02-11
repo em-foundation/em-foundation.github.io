@@ -1,3 +1,3 @@
 # em-foundation.github.io
 
-The public-facing documentation site for **The EM Programming Language**, found at [docs.openem.org](https://docs.openem.org)
+The public-facing landing page for **The EM Foundation**, found at [www.openem.org](https://www.openem.org)

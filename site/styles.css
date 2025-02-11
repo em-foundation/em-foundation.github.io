@@ -1,0 +1,66 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+body {
+    background-color: #121212;
+    color: #cccccc;
+    font-family: Poppins, sans-serif;
+    font-weight: 200;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+body a {
+    color: #00CC99;
+    text-decoration: none;
+}
+body a:hover {
+    text-decoration: underline;
+}
+.em {
+    color: #00CC99;
+    font-weight: bold;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+.logo {
+    max-width: 300px;
+    margin-top: 20px;
+}
+.tagline {
+    font-size: 1.5em;
+    color: #80CEFF;
+    margin: 10px 0;
+}
+.mission {
+    font-size: 1.3em;
+    margin: 20px 0;
+    padding-top: 25px;
+}
+.highlight {
+    font-size: 1.3em;
+    margin: 25px 0;
+}
+.status {
+    font-size: 0.72em;
+    color: #AAAAAA;
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+footer {
+    font-size: 0.85em;
+    color: #AAAAAA;
+    padding: 8px 0;
+}
+footer a {
+    color: #80CEFF;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
