@@ -2,12 +2,38 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+:root {
+    font-size: 14px;
+    --container-max-width: 720px;
+    --logo-max-width: 300px;
+    --tagline-font-size: 1.5em;
+    --mission-font-size: 1.3em;
+    --highlight-font-size: 1.3em;
+    --status-font-size: 0.72em;
+    --footer-font-size: 0.85em;
+}
+
+@media (orientation: portrait) {
+    :root {
+        /* font-size: 9px; */
+        --container-max-width: 360px;
+        --logo-max-width: 200px;
+        --tagline-font-size: 1.3em;
+        --mission-font-size: 0.8em;
+        --highlight-font-size: 0.7em;
+        --status-font-size: 0.4em;
+        --footer-font-size: 0.5em;
+    }
+}
+
 body {
     background-color: #121212;
     color: #cccccc;
     font-family: Poppins, sans-serif;
     font-weight: 200;
     letter-spacing: 0.5px;
+    hyphens: auto;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -24,38 +50,39 @@ body a:hover {
     font-weight: bold;
 }
 .container {
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: auto;
     padding: 20px;
 }
 .logo {
-    max-width: 300px;
     margin-top: 20px;
+    max-width: var(--logo-max-width);
 }
 .tagline {
-    font-size: 1.5em;
+    font-size: var(--tagline-font-size);
     color: #80CEFF;
     margin: 10px 0;
 }
 .mission {
-    font-size: 1.3em;
+    font-size: var(--mission-font-size);
     margin: 20px 0;
     padding-top: 25px;
 }
 .highlight {
-    font-size: 1.3em;
+    font-size: var(--highlight-font-size);
     margin: 25px 0;
 }
 .status {
-    font-size: 0.72em;
+    font-size: var(--status-font-size);
     color: #AAAAAA;
     margin-top: 50px;
     margin-bottom: 0px;
 }
 footer {
-    font-size: 0.85em;
+    font-size: var(--footer-font-size);
     color: #AAAAAA;
     padding: 8px 0;
+    width: 100%;
 }
 footer a {
     color: #80CEFF;
