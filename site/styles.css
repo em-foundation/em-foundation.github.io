@@ -7,7 +7,7 @@
     font-size: 14px;
     --container-max-width: 720px;
     --logo-max-width: 300px;
-    --tagline-font-size: 1.5em;
+    --tagline-font-size: 1.7em;
     --mission-font-size: 1.3em;
     --highlight-font-size: 1.3em;
     --status-font-size: 0.72em;
@@ -19,9 +19,9 @@
         /* font-size: 9px; */
         --container-max-width: 360px;
         --logo-max-width: 200px;
-        --tagline-font-size: 1.3em;
+        --tagline-font-size: 1.5em;
         --mission-font-size: 0.8em;
-        --highlight-font-size: 0.65em;
+        --highlight-font-size: 0.67em;
         --status-font-size: 0.4em;
         --footer-font-size: 0.5em;
     }
@@ -45,8 +45,9 @@ body a {
 body a:hover {
     text-decoration: underline;
 }
-.em {
+.arrow {
     color: #00CC99;
+    font-size: 1.7em;
     font-weight: bold;
 }
 .container {
