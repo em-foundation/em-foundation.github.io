@@ -47,8 +47,9 @@ body a:hover {
 }
 .arrow {
     color: #00CC99;
-    font-size: 1.7em;
+    font-size: 1.5em;
     font-weight: bold;
+    vertical-align: -5px;
 }
 .container {
     max-width: var(--container-max-width);
