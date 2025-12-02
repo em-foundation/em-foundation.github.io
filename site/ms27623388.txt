@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "openem.org",
+  "Id": "85bec337-3a2f-4425-8746-4d15a4645418"
+}
