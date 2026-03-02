@@ -104,13 +104,15 @@
         }
 
         .em-bull::before {
-            content: '●';
+            content: '•';
             color: var(--em);
+            display: inline-block;
             margin: 0 0.08em;
-            font-size: 0.9em;
+            font-family: 'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif;
+            font-size: 1.3em;        /* tweak once */
             position: relative;
-            top: -0.10em;   /* adjust −0.04em to −0.10em */
-
+            top: 0.05em;             /* tweak once */
+            line-height: 1;
         }        
 
         .group {
