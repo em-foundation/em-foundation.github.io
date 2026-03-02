@@ -188,6 +188,20 @@
             text-align: center;
         }
 
+
+        .repo-link {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--em);
+            text-decoration: none;
+            padding-bottom: 2px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.15s ease;
+        }
+
+        .repo-link:hover {
+            border-bottom-color: var(--muted);
+        }
     </style>
 </head>
 
@@ -301,13 +315,20 @@
                         </div>
                         <div class="item">
                             <h2>15+ years of real-world experience</h2>
-                            <p>Since 2010, EM programming technology has spanned more than twenty 8-, 16-, and 32-bit MCUs
+                            <p>Since 2010, EM programming technology has supported more than twenty 8-, 16-, and 32-bit MCUs
                                 across a dozen silicon vendors.</p>
                             <p>Commercial deployments on select platforms have demonstrated
                                 measurable reductions in code size, power consumption, and system cost.</p>
                         </div>
                         <div class="item">
-                            <h2>Get involved &ndash; contribute &middot; collaborate</h2>
+                            <h2>EM<span class="em-bull"></span>porium &ndash; nexus of EM<span class="em-bull"></span>script content</h2>
+                            <p>Visit it, follow it, install it, learn it, discuss it, and ultimately contribute your own content.</p>
+                            <p><a class="repo-link"
+                                href="https://github.com/em-foundation/emporium/blob/dev/docs/ReadMore.md"
+                                target="_blank"
+                                rel="noopener">
+                                Explore the EM<span class="em-bull"></span>Porium ➜
+                            </a></p>                            
                         </div>
                     </section>
 
