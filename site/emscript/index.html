@@ -104,14 +104,14 @@
         }
 
         .em-bull::before {
-            content: '•';
+            content: '●';
             color: var(--em);
-            display: inline-block;
-            transform: scale(1.35) translateY(-0.1em);
-            transform-origin: center;
-            line-height: 0;
             margin: 0 0.08em;
-        }
+            font-size: 0.9em;
+            position: relative;
+            top: -0.10em;   /* adjust −0.04em to −0.10em */
+
+        }        
 
         .group {
             margin-top: 18px;
@@ -328,7 +328,7 @@
                                 href="https://github.com/em-foundation/emporium/blob/dev/docs/ReadMore.md"
                                 target="_blank"
                                 rel="noopener">
-                                Explore the EM&bull;Porium ➜
+                                Explore the EM<span class="em-bull"></span>porium ➜
                             </a></p>                            
                         </div>
                     </section>
