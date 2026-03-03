@@ -301,13 +301,18 @@
                             </figure>
                             <p>The <i>configuration</i> phase &ndash; upstream from program compilation &ndash; represents the defining innovation of the EM<span class="em-bull"></span>Script translation flow.</p>
                             <p>As in target compilation, the translator first emits <code>Mod.em.js</code> for every EM<span class="em-bull"></span>Script module; <code>main.js</code> will then <code class="cmd-ck">import</code> all generated code.</p>
-                            <p>But unlike target compilation <code>main.js</code> serves as the <i>meta-program</i> &ndash; running on a desktop computer rather than a resource-constrained MCU.</p>
+                            <p>But unlike target compilation <code>main.js</code> serves as the <i>meta-program</i> &ndash; running on a Node.js desktop rather than a resource-constrained MCU.</p>
                             <p>The configuration phase in fact serves as a build-time <i>staging area</i> &ndash; enabling an unconstrained &ldquo;dry-run&rdquo; of the target application program.</p>
                             <p>Just as modules contribute <i>target</i> functions invoked at run-time, they can also shape program configuration through build-time <i>meta</i> functions.</p>
                             <p>With every EM<span class="em-bull"></span>Script module actively participating, a new category of <i>application-driven</i> optimizations starts to emerge.</p>
                         </div>
                         <div class="item">
                             <h2>EM<span class="em-bull"></span>Script &ndash; its own meta-language</h2>
+                            <p>Using the same language syntax and semantics to express <i>target</i> as well as <i>meta</i> functions reflects the novelty of the EM<span class="em-bull"></span>Script translator.</p>
+                            <p>At the same time, intrinsic constructs like <code class="cmd-cs">$config</code> parameters and <code class="cmd-cs">$proxy</code> modules act as <i>build-time</i> variables which harden into <i>run-time</i> constants.</p>
+                            <p>With all of Node.js available during configuration, meta-functions can bring extensive resources to bear when computing <code class="cmd-cs">$config</code> or <code class="cmd-cs">$proxy</code> values.</p>
+                            <p>Once frozen, downstream compilation can fold <code class="cmd-cs">$config</code> values across the target program as well as directly call (or even <code>inline</code>) <code class="cmd-cs">$proxy</code> methods.</p>
+                            <p>Less memory, more compact code, no run-time indirection &ndash; just higher-level programming with higher levels of run-time performance.</p>
                         </div>
                     </section>
 
