@@ -27,11 +27,20 @@
             background: var(--bg);
         }
 
+/* remove transform from .page */
+.page {
+    width: auto;
+    transform: none;
+}
+
+/* scale the actual container */
+.frame {
+}        
+
         .page {
             width: var(--design-w);
             transform-origin: top center;
-            transform: scale(min(1, (100vw - 48px) / var(--design-w)));
-        }
+         }
 
         * {
             box-sizing: border-box;
@@ -50,15 +59,16 @@
 
         /* "device frame" */
         .frame {
-            /* width: 390px; */
-            /* iPhone 14-ish */
-            max-width: 100%;
+            width: var(--design-w);
+            max-width: var(--design-w);
             margin: 0 auto;
             border: 2px solid var(--rule);
             border-radius: 18px;
             background: var(--page);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
             overflow: hidden;
+            transform-origin: top center;
+            transform: scale(min(1, (100vw - 48px) / var(--design-w))); /* 48px = body padding */
         }
 
         header {
