@@ -34,9 +34,9 @@
         }
 
         /* scale down only when viewport narrower than design width */
-        @media (max-width: var(--design-w)) {
+        @media (max-width: 460px) {
             .page {
-                transform: scale(calc(100vw / var(--design-w)));
+                transform: scale(calc(100vw / 460px));
             }
         }
 
@@ -57,7 +57,7 @@
 
         /* "device frame" */
         .frame {
-            width: 390px;
+            /* width: 390px; */
             /* iPhone 14-ish */
             max-width: 100%;
             margin: 0 auto;
