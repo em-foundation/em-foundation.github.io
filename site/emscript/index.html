@@ -54,15 +54,15 @@ body {
     margin: 0 auto;
 }
 
-/* scale down on narrow viewports (ANDROID: prefer zoom) */
-@media (max-width: 468px) {
+@media (max-width: calc(var(--design-w) + (2 * var(--pad)))) {
     .frame {
         transform-origin: top center;
         transform: scale(calc((100vw - (2 * var(--pad))) / var(--design-w)));
     }
 }
+
 @supports (zoom: 1) {
-    @media (max-width: 468px) {
+    @media (max-width: calc(var(--design-w) + (2 * var(--pad)))) {
         .frame {
             transform: none;
             zoom: calc((100vw - (2 * var(--pad))) / var(--design-w));
