@@ -54,18 +54,18 @@ body {
     margin: 0 auto;
 }
 
-@media (max-width: calc(var(--design-w) + (2 * var(--pad)))) {
+@media (max-width: 444px) {
     .frame {
         transform-origin: top center;
-        transform: scale(calc((100vw - (2 * var(--pad))) / var(--design-w)));
+        transform: scale(calc((100vw - 24px) / 420));
     }
 }
 
 @supports (zoom: 1) {
-    @media (max-width: calc(var(--design-w) + (2 * var(--pad)))) {
+    @media (max-width: 444px) {
         .frame {
             transform: none;
-            zoom: calc((100vw - (2 * var(--pad))) / var(--design-w));
+            zoom: calc((100vw - 24px) / 420);
         }
     }
 }
