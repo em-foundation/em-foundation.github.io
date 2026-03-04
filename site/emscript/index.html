@@ -208,12 +208,25 @@
             border-bottom-color: var(--muted);
         }
 
+        code.cmd-cd {
+            color: red;
+        }
+
         code.cmd-ck {
             color: #c586c0;
         }
 
         code.cmd-cs {
             color: #cd6f1c;
+        }
+
+        .closing {
+            text-align: center;
+            font-size: 1.35em;
+            font-weight: 700;
+            color: var(--em);
+            margin-top: 16px;
+            letter-spacing: .02em
         }
     </style>
 </head>
@@ -263,6 +276,7 @@
                             <figure class="code">
                                 <img class="code-shot" src="snip-1.png" alt="EM•Script hello world">
                             </figure>
+                            <p>Unusual <code class="cmd-cd">printf</code> syntax &ndash; perfectly legal TypeScript.</p>
                         </div>
                         <div class="item">
                             <h2>Show me the code&hellip;&nbsp; blink that LED</h2>
@@ -270,6 +284,7 @@
                             <figure class="code">
                                 <img class="code-shot" src="snip-2.png" alt="EM•Script blinker">
                             </figure>
+                            <p>~1K of code in EM<span class="em-bull"></span>Script &ndash; <i>how big is yours</i>&thinsp;??</p>
                         </div>
                         <div class="item">
                             <h2>Show me the code&hellip;&nbsp; bit-bang a UART</h2>
@@ -277,6 +292,7 @@
                             <figure class="code">
                                 <img class="code-shot" src="snip-3.png" alt="EM•Script bit-banged UART">
                             </figure>
+                            <p>The <b><code>em$meta</code></b> and <b><code>em$targ</code></b> labels hint at something deeper within the EM<span class="em-bull"></span>Script translator.</p>
                         </div>
                     </section>
 
@@ -374,14 +390,19 @@
                         <div class="group-title">The Vision</div>
 
                         <div class="item">
-                            <h2>A growing EM<span class="em-bull"></span>porium of tiny code</h2>
+                            <h2>An EM<span class="em-bull"></span>porium of tiny code</h2>
+                            <p>A shared repository of reusable EM<span class="em-bull"></span>Script content for resource-constrained embedded systems, where every byte and &mu;Joule matters.</p>
                         </div>
                         <div class="item">
-                            <h2>10× smaller software than legacy C</h2>
+                            <h2>10× smaller than legacy C</h2>
+                            <p>Higher-level language constructs combined with build-time specialization enable order-of-magnitude reductions in run-time code size.
+</p>
                         </div>
                         <div class="item">
-                            <h2>10× impact on future silicon PPA</h2>
+                            <h2>10× impact on silicon PPA</h2>
+                            <p>Comparable order-of-magnitude improvements in <i>power &middot; performance &middot; area</i> for next-generation MCUs targeting deeply-embedded systems.</p>
                         </div>
+                        <div class="closing">Tiny Code → Tiny Chips</div>
                     </section>
                 </main>
             </div>
