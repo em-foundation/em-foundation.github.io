@@ -16,15 +16,17 @@
     --accent: #d9d9de;
     --em: hsl(165, 100%, 60%);
     --em-muted: hsl(165, 65%, 55%);
+    --design-w: 420px;
+    --pad: 24px;
 }
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+
+html, body { width: 100%; }
 
 body {
     margin: 0;
-    padding: 24px;
+    padding: var(--pad);
     background: var(--bg);
     color: var(--ink);
     font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
@@ -40,26 +42,31 @@ body {
     background: var(--bg);
 }
 
-.page {
-    width: 420px;
-    margin: 0 auto;
-}
+.page { width: var(--design-w); }
 
 .frame {
-    width: 420px;
-    max-width: 100%;
-    margin: 0 auto;
+    width: var(--design-w);
     border: 2px solid var(--rule);
     border-radius: 18px;
     background: var(--page);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     overflow: hidden;
-    transform-origin: top center;
+    margin: 0 auto;
 }
 
+/* scale down on narrow viewports (ANDROID: prefer zoom) */
 @media (max-width: 468px) {
     .frame {
-        transform: scale(calc((100vw - 48px) / 420));
+        transform-origin: top center;
+        transform: scale(calc((100vw - (2 * var(--pad))) / var(--design-w)));
+    }
+}
+@supports (zoom: 1) {
+    @media (max-width: 468px) {
+        .frame {
+            transform: none;
+            zoom: calc((100vw - (2 * var(--pad))) / var(--design-w));
+        }
     }
 }
 
@@ -95,9 +102,7 @@ h1 {
     letter-spacing: -0.01em;
 }
 
-main {
-    padding: 8px 18px 24px 18px;
-}
+main { padding: 8px 18px 24px 18px; }
 
 .em-bull::before {
     content: '•';
@@ -165,9 +170,7 @@ h2 {
     padding-top: 6px;
 }
 
-figure.code {
-    margin: 18px 0 6px 0;
-}
+figure.code { margin: 18px 0 6px 0; }
 
 figure.code figcaption {
     margin: 6px 0 0 0;
@@ -193,9 +196,7 @@ figure.code figcaption {
     transition: border-color 0.15s ease;
 }
 
-.repo-link:hover {
-    border-bottom-color: var(--muted);
-}
+.repo-link:hover { border-bottom-color: var(--muted); }
 
 code.cmd-cd { color: red; }
 code.cmd-ck { color: #c586c0; }
@@ -209,7 +210,7 @@ code.cmd-cs { color: #cd6f1c; }
     margin-top: 16px;
     letter-spacing: .02em;
 }
-</style> 
+</style>
 </head>
 
 <body>
