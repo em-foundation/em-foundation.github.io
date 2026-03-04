@@ -16,7 +16,7 @@
             --accent: #d9d9de;
             --em: hsl(165, 100%, 60%);
             --em-muted: hsl(165, 65%, 55%);
-            --design-w: 460px; /* pick your canonical column width */
+            --design-w: 440px; /* pick your canonical column width */
         }
 
         /* center everything */
@@ -34,9 +34,9 @@
         }
 
         /* scale down only when viewport narrower than design width */
-        @media (max-width: 460px) {
+        @media (max-width: 440px) {
             .page {
-                transform: scale(calc(100vw / 460px));
+                transform: scale(calc((100vw - 48px) / 440px)); /* body padding */
             }
         }
 
