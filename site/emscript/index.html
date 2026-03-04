@@ -142,7 +142,7 @@ main { padding: 8px 18px 24px 18px; }
 .item {
     padding: 3px 0;
     margin-top: 14px;
-    border-bottom: 2px solid rgba(255,255,255,0.10);
+    border-bottom: 2px solid rgba(255,255,255,0.20);
 }
 
 .item:last-child {
@@ -237,8 +237,8 @@ code.cmd-cs { color: #cd6f1c; }
                             <h2>C leaves performance on the table</h2>
                             <p>After more than fifty years, the C programming language continues to dominate software development for embedded systems.</p>
                             <p>An ideal &ldquo;medium-level&rdquo; language for 8-, 16-, and 32-bit MCUs, C programmers can directly touch bare-metal HW using structured SW.</p>
-                            <p>But as systems grew more complex, C programmers layered more macros, indirections, and defensive APIs onto an ever-expanding codebase.</p>
-                            <p>Pushing C to the brink, attempts to mitigate program complexity can incur additional <i>run-time</i> overhead &ndash; wasting time, space, and power.</p>
+                            <p>But as systems grow more complex, C programmers layer more macros, indirections, and defensive APIs onto their ever-expanding codebase.</p>
+                            <p>Pushing C to the brink, attempts to mitigate program complexity can in fact incur additional <i>run-time</i> overhead &ndash; wasting time, space, and power.</p>
                         </div>
                         <div class="item">
                             <h2>A new language for embedded systems</h2>
@@ -262,19 +262,19 @@ code.cmd-cs { color: #cd6f1c; }
                         </div>
                         <div class="item">
                             <h2>Show me the code&hellip;&nbsp; blink that LED</h2>
-                            <p>The real <i>&ldquo;hello world&rdquo;</i> of any embedded programming platform:</p>
+                            <p>The true <i>&ldquo;hello world&rdquo;</i> example for any embedded programming platform:</p>
                             <figure class="code">
                                 <img class="code-shot" src="snip-2.png" alt="EM•Script blinker">
                             </figure>
                             <p>~1K of code in EM<span class="em-bull"></span>Script &ndash; <i>how big is yours</i>&thinsp;??</p>
                         </div>
                         <div class="item">
-                            <h2>Show me the code&hellip;&nbsp; bit-bang a UART</h2>
-                            <p>Portable EM<span class="em-bull"></span>Script &ndash; higher-level programming <i>and</i> higher-levels of program performance.</p>
+                            <h2>Show me the code&hellip;&nbsp; bit-bang UART TX</h2>
+                            <p>100% portable EM<span class="em-bull"></span>Script &ndash; higher-level programming <i>and</i> higher-levels of program performance.</p>
                             <figure class="code">
                                 <img class="code-shot" src="snip-3.png" alt="EM•Script bit-banged UART">
                             </figure>
-                            <p>The <b><code>em$meta</code></b> and <b><code>em$targ</code></b> labels hint at something deeper within the EM<span class="em-bull"></span>Script translator.</p>
+                            <p>The <b><code>em$meta</code></b> and <b><code>em$targ</code></b> labels hint at something deeper within the EM<span class="em-bull"></span>Script translator as it processes <code class="cmd-cs">$config</code> and <code class="cmd-cs">$proxy</code> constructs.</p>
                         </div>
                     </section>
 
@@ -288,9 +288,9 @@ code.cmd-cs { color: #cd6f1c; }
                                 <img class="code-shot" src="fig-1.png" alt="Simple Transpiler">
                             </figure>
                             <p>A command-line tool, the EM<span class="em-bull"></span>Script translator emits C++ code for every <code>.em.ts</code> source file the application may ultimately <code class="cmd-ck">import</code>.</p>
-                            <p>Using internal TypeScript APIs, the translator processes <code class="cmd-cs">$config</code> and <code class="cmd-cs">$proxy</code> constructs &ndash; imposing EM<span class="em-bull"></span>Script semantics on TypeScript syntax.</p>
+                            <p>Using internal TypeScript APIs, the translator processes <code class="cmd-cs">$config</code> and <code class="cmd-cs">$proxy</code> by overlaying EM<span class="em-bull"></span>Script semantics on TypeScript syntax.</p>
                             <p>For each EM<span class="em-bull"></span>Script module, the translator emits <code>Mod.[hpp,cpp]</code> and then arranges for <code>main.cpp</code> to ultimately <code class="cmd-ck">#include</code> all generated code.</p>
-                            <p>Feeding one merged C++ file to the downstream MCU compiler enables <i>whole program optimization</i> &ndash; markedly shrinking run-time code.</p>
+                            <p>Feeding one merged C++ file to the downstream MCU compiler enables <i>whole program optimization</i>, which markedly shrinks run-time code.</p>
                         </div>
                         <div class="item">
                             <h2>The innovation &ndash; build-time configuration</h2>
@@ -307,7 +307,7 @@ code.cmd-cs { color: #cd6f1c; }
                         <div class="item">
                             <h2>EM<span class="em-bull"></span>Script &ndash; its own meta-language</h2>
                             <p>Using the same language syntax and semantics to express <i>target</i> as well as <i>meta</i> functions reflects the novelty of the EM<span class="em-bull"></span>Script translator.</p>
-                            <p>At the same time, intrinsic constructs like <code class="cmd-cs">$config</code> parameters and <code class="cmd-cs">$proxy</code> modules act as <i>build-time</i> variables which harden into <i>run-time</i> constants.</p>
+                            <p>In this flow, intrinsic constructs like <code class="cmd-cs">$config</code> parameters and <code class="cmd-cs">$proxy</code> modules act as <i>build-time</i> variables which harden into <i>run-time</i> constants.</p>
                             <p>With all of Node.js available during configuration, meta-functions can bring extensive resources to bear when computing <code class="cmd-cs">$config</code> or <code class="cmd-cs">$proxy</code> values.</p>
                             <p>Once frozen, downstream compilation can fold <code class="cmd-cs">$config</code> values across the target program as well as directly call (or even <code>inline</code>) <code class="cmd-cs">$proxy</code> methods.</p>
                             <p>Less memory, more compact code, no run-time indirection &ndash; just higher-level programming with higher levels of run-time performance.</p>
@@ -319,7 +319,7 @@ code.cmd-cs { color: #cd6f1c; }
 
                         <div class="item">
                             <h2>Use VS Code &ndash; familiar and proven</h2>
-                            <p>VS Code draws developers supports multiple languages and application domains &ndash; including embedded programming in C/C++.</p>
+                            <p>VS Code draw developers working in multiple languages and application domains &ndash; including embedded programming in C/C++.</p>
                         </div>
                         <div class="item">
                             <h2>Write TypeScript &ndash; built-in tooling</h2>
@@ -334,7 +334,7 @@ code.cmd-cs { color: #cd6f1c; }
                             </figure>
                             <figure class="code">
                                 <img class="code-shot" src="screen-2.png" alt="EM•Builder Build · Run">
-                                <div class="gallery-caption">Simulator for quick-start <b>&middot;</b> Signal capture and analysis</div>
+                                <div class="gallery-caption">Quick-start Pi Pico simulator <b>&middot;</b> Signal capture and analysis</div>
                             </figure>
                         </div>
                     </section>
@@ -357,8 +357,8 @@ code.cmd-cs { color: #cd6f1c; }
                                 measurable reductions in code size, power consumption, and system cost.</p>
                         </div>
                         <div class="item">
-                            <h2>EM<span class="em-bull"></span>porium &ndash; nexus of EM<span class="em-bull"></span>Script content</h2>
-                            <p>Visit it, follow it, install it, learn it, discuss it, and ultimately contribute your own content.</p>
+                            <h2>EM<span class="em-bull"></span>porium &ndash; the nexus of EM<span class="em-bull"></span>Script content</h2>
+                            <p>Visit it, follow it, install it, learn it, discuss it, and ultimately contribute your own content to it.</p>
                             <p><a class="repo-link"
                                 href="https://github.com/em-foundation/emporium/blob/dev/docs/ReadMore.md"
                                 target="_blank"
