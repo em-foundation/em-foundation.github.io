@@ -16,7 +16,7 @@
             --accent: #d9d9de;
             --em: hsl(165, 100%, 60%);
             --em-muted: hsl(165, 65%, 55%);
-            --design-w: 440px; /* pick your canonical column width */
+            --design-w: 420px; /* pick your canonical column width */
         }
 
         /* center everything */
@@ -27,17 +27,10 @@
             background: var(--bg);
         }
 
-        /* fixed layout width -> line breaks stay identical */
         .page {
             width: var(--design-w);
             transform-origin: top center;
-        }
-
-        /* scale down only when viewport narrower than design width */
-        @media (max-width: 440px) {
-            .page {
-                transform: scale(calc((100vw - 48px) / 440px)); /* body padding */
-            }
+            transform: scale(min(1, (100vw - 48px) / var(--design-w)));
         }
 
         * {
