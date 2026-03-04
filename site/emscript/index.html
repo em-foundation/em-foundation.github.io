@@ -17,7 +17,7 @@
     --em: hsl(165, 100%, 60%);
     --em-muted: hsl(165, 65%, 55%);
     --design-w: 420px;
-    --pad: 12px;
+    --pad: 24px;
 }
 
 * { box-sizing: border-box; }
@@ -35,7 +35,6 @@ body {
     overflow-wrap: break-word;
 }
 
-/* center everything */
 .viewport {
     display: flex;
     justify-content: center;
@@ -43,10 +42,8 @@ body {
     background: var(--bg);
 }
 
-/* canonical column */
 .page { width: var(--design-w); }
 
-/* device frame */
 .frame {
     width: var(--design-w);
     border: 2px solid var(--rule);
@@ -55,21 +52,20 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     overflow: hidden;
     margin: 0 auto;
-    transform-origin: top center;
 }
 
-/* Android-safe scaling: no var() inside calc(), no calc() in @media */
-@media (max-width: 444px) {
+/* scale down on narrow viewports (ANDROID: prefer zoom) */
+@media (max-width: 468px) {
     .frame {
-        transform: scale(calc((100vw - 24px) / 420));
+        transform-origin: top center;
+        transform: scale(calc((100vw - (2 * var(--pad))) / var(--design-w)));
     }
 }
-
 @supports (zoom: 1) {
-    @media (max-width: 444px) {
+    @media (max-width: 468px) {
         .frame {
             transform: none;
-            zoom: calc((100vw - 24px) / 420);
+            zoom: calc((100vw - (2 * var(--pad))) / var(--design-w));
         }
     }
 }
@@ -146,7 +142,7 @@ main { padding: 8px 18px 24px 18px; }
 .item {
     padding: 3px 0;
     margin-top: 14px;
-    border-bottom: 2px solid rgba(255,255,255,0.20);
+    border-bottom: 2px solid rgba(255,255,255,0.10);
 }
 
 .item:last-child {
