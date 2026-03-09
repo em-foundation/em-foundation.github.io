@@ -288,7 +288,7 @@ code.cmd-cs { color: #cd6f1c; }
                                 <img class="code-shot" src="fig-1.png" alt="Simple Transpiler">
                             </figure>
                             <p>A command-line tool, the EM<span class="em-bull"></span>Script translator emits C++ code for every <code>.em.ts</code> source file the application may ultimately <code class="cmd-ck">import</code>.</p>
-                            <p>Using internal TypeScript APIs, the translator handles <code class="cmd-cs">$config</code> and <code class="cmd-cs">$proxy</code> constructs by overlaying the semantics of EM<span class="em-bull"></span>Script on to TypeScript syntax.</p>
+                            <p>Using internal TypeScript APIs, the translator handles <code class="cmd-cs">$config</code> and <code class="cmd-cs">$proxy</code> constructs by overlaying the semantics of EM<span class="em-bull"></span>Script onto TypeScript syntax.</p>
                             <p>For each EM<span class="em-bull"></span>Script module the translator emits <code>Mod.[hpp,cpp]</code> files, and then arranges for <code>main.cpp</code> to ultimately <code class="cmd-ck">#include</code> all generated code.</p>
                             <p>Feeding one merged C++ file to the downstream MCU compiler enables <i>whole program optimization</i>, which markedly shrinks run-time code.</p>
                         </div>
