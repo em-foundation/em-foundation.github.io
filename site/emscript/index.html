@@ -298,7 +298,7 @@ code.cmd-cs { color: #cd6f1c; }
                             </figure>
                             <p>A command-line tool, the EM<span class="em-bull"></span>Script translator emits C++ code for every <code>.em.ts</code> source file the application may ultimately <code class="cmd-ck">import</code>.</p>
                             <p>Using internal TypeScript APIs, the translator handles <code class="cmd-cs">$config</code> and <code class="cmd-cs">$proxy</code> constructs by overlaying the semantics of EM<span class="em-bull"></span>Script onto TypeScript syntax.</p>
-                            <p>For each EM<span class="em-bull"></span>Script module the translator emits <code>Mod.[hpp,cpp]</code> files, and then arranges for <code>main.cpp</code> to ultimately <code class="cmd-ck">#include</code> all generated code.</p>
+                            <p>The translator first emits <code>Mod.[hpp,cpp]</code> files for every EM<span class="em-bull"></span>Script module, and then arranges for <code>main.cpp</code> to ultimately <code class="cmd-ck">#include</code> these generated files.</p>
                             <p>Feeding one merged C++ file to the downstream MCU compiler enables <i>whole program optimization</i>, which markedly shrinks run-time code.</p>
                         </div>
                         <div class="item">
@@ -307,7 +307,7 @@ code.cmd-cs { color: #cd6f1c; }
                                 <img class="code-shot" src="fig-2.png" alt="Build-Time Configuration">
                             </figure>
                             <p>The <i>configuration</i> phase &ndash; upstream from program compilation &ndash; stands as the defining innovation of the EM<span class="em-bull"></span>Script translation flow.</p>
-                            <p>As in target compilation, the translator first emits a <code>Mod.em.js</code> file for every EM<span class="em-bull"></span>Script module; <code>main.js</code> will then <code class="cmd-ck">import</code> all generated code.</p>
+                            <p>As in target compilation, the translator first emits a <code>Mod.em.js</code> file for every EM<span class="em-bull"></span>Script module.&thinsp; <code>main.js</code> will then <code class="cmd-ck">import</code> all generated code.</p>
                             <p>But unlike target compilation, <code>main.js</code> serves as the application's <i>meta-program</i> &ndash; running on a Node.js desktop rather than a resource-constrained MCU.</p>
                             <p>The configuration phase in fact serves as a build-time <i>staging area</i> &ndash; enabling an unconstrained &ldquo;dry-run&rdquo; of the target application program.</p>
                             <p>Just as modules contribute <i>target</i> functions invoked at run-time, they can also shape program configuration through build-time <i>meta</i> functions.</p>
@@ -332,11 +332,11 @@ code.cmd-cs { color: #cd6f1c; }
                         </div>
                         <div class="item">
                             <h2>Write TypeScript &ndash; built-in tooling</h2>
-                            <p>Using TypeScript brings autocomplete, navigation, refactoring, formatting, and diagnostics directly from VS Code&rsquo;s built-in language services.</p>
+                            <p>Using TypeScript brings autocompletion, navigation, refactoring, formatting, and diagnostics directly from VS Code&rsquo;s built-in language services.</p>
                         </div>
                         <div class="item">
                             <h2>Add EM<span class="em-bull"></span>Builder &ndash; from tour to target</h2>
-                            <p>The EM<span class="em-bull"></span>Builder extension augments VS Code with EM<span class="em-bull"></span>Script-aware views, guided tours, and integrated build&thinsp;<b>&middot;</b>&thinsp;run workflows.</p>
+                            <p>The EM<span class="em-bull"></span>Builder extension augments VS Code with EM<span class="em-bull"></span>Script-centric views, guided tours, and integrated build&thinsp;<b>&middot;</b>&thinsp;run workflows.</p>
                             <figure class="code">
                                 <img class="code-shot" src="screen-1.png" alt="EM•Builder Views">
                                 <div class="gallery-caption">Content browser <b>&middot;</b> Guided tours <b>&middot;</b> Editing experience</div>
