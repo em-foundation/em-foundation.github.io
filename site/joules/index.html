@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EM•Script — Measuring Joules, Not Watts</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root {
+    --bg: #0b0b0c;
+    --page: #121214;
+    --ink: #f2f2f3;
+    --muted: #a7a7ad;
+    --rule: #2a2a2f;
+    --accent: #d9d9de;
+    --em: hsl(165, 100%, 60%);
+    --em-muted: hsl(165, 65%, 55%);
+    --design-w: 420px;
+    --pad: 24px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { width: 100%; }
+
+body {
+    margin: 0;
+    padding: var(--pad);
+    background: var(--bg);
+    color: var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    line-height: 1.45;
+    hyphens: auto;
+    overflow-wrap: break-word;
+}
+
+.viewport {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    background: var(--bg);
+}
+
+.page { width: var(--design-w); }
+
+.frame {
+    width: var(--design-w);
+    border: 2px solid var(--rule);
+    border-radius: 18px;
+    background: var(--page);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* scale down on narrow viewports (ANDROID: prefer zoom) */
+@media (max-width: 468px) {
+    .frame {
+        transform-origin: top center;
+        transform: scale(calc((100vw - (2 * var(--pad))) / var(--design-w)));
+    }
+}
+@supports (zoom: 1) {
+    @media (max-width: 468px) {
+        .frame {
+            transform: none;
+            zoom: calc((100vw - (2 * var(--pad))) / var(--design-w));
+        }
+    }
+}
+
+header {
+    padding: 18px 18px 24px 18px;
+    border-bottom: 1px solid var(--rule);
+}
+
+.masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+    opacity: 0.9;
+    transform: translateY(4px);
+}
+
+.kicker {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+h1 {
+    margin: 8px 0 0 0;
+    font-size: 22px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+}
+
+main { padding: 8px 18px 24px 18px; }
+
+.em-bull::before {
+    content: '•';
+    color: var(--em);
+    display: inline-block;
+    margin: 0 0.08em;
+    font-family: 'Segoe UI Symbol','Apple Symbols','Noto Sans Symbols',sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    position: relative;
+    top: 0;
+    line-height: 1;
+}
+
+.group {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--em);
+}
+
+.group:first-child {
+    margin-top: 0;
+    padding-top: 10px;
+    border-top: none;
+}
+
+.group-title {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+}
+
+.item {
+    padding: 3px 0;
+    margin-top: 14px;
+    border-bottom: 2px solid rgba(255,255,255,0.10);
+}
+
+.item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+}
+
+.hint {
+    margin: 12px 0 0 0;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.code-shot {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-top: 6px;
+}
+
+figure.code { margin: 18px 0 6px 0; }
+
+figure.code figcaption {
+    margin: 6px 0 0 0;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.gallery-caption {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.8);
+    margin-top: 0.6em;
+    text-align: center;
+}
+
+.repo-link {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--em-muted);
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.15s ease;
+}
+
+.repo-link:hover { border-bottom-color: var(--muted); }
+
+code.cmd-cd { color: red; }
+code.cmd-ck { color: #c586c0; }
+code.cmd-cs { color: #cd6f1c; }
+
+.closing {
+    text-align: center;
+    font-size: 1.35em;
+    font-weight: 700;
+    color: var(--em);
+    margin-top: 16px;
+    letter-spacing: .02em;
+}
+</style>
+</head>
+
+<body>
+<div class="viewport">
+<div class="page">
+            <div class="frame" role="document" aria-label="Mobile-column mockup">
+
+                <header class="masthead">
+                    <h1>Every &mu;Joule Matters</h1>
+                    <img src="logo.png" class="logo" alt="EM logo">
+                </header>
+
+                <main>
+
+                    <section class="group">
+                        <div class="group-title">The Shift</div>
+
+                        <div class="item">
+                            <h2>Benchmarks → power (W), not energy (J)</h2>
+                        </div>
+                        <div class="item">
+                            <h2>Legacy SW → leaves &mu;J on the table</h2>
+                        </div>
+                        <div class="item">
+                            <h2>Same HW → but novel SW</h2>
+                        </div>
+                    </section>
+
+                    <section class="group">
+                        <div class="group-title">The Reference</div>
+
+                        <div class="item">
+                            <h2>BlueJoule&trade; → BLE advertising benchmark</h2>
+                        </div>
+                        <div class="item">
+                            <h2>Multiple MCUs → varied voltage points</h2>
+                        </div>
+                        <div class="item">
+                            <h2>Vendor SDK stacks → shared baseline</h2>
+                        </div>
+                    </section>
+
+                    <section class="group">
+                        <div class="group-title">The Challenge</div>
+
+                        <div class="item">
+                            <h2>Legacy stacks → hidden inefficiencies</h2>
+                        </div>
+                        <div class="item">
+                            <h2>SW overhead → shifts burden to silicon</h2>
+                        </div>
+                        <div class="item">
+                            <h2>EM<span class="em-bull"></span>Script → reclaim energy</h2>
+                        </div>
+                    </section>
+
+                    <section class="group">
+                        <div class="group-title">The Proof</div>
+
+                        <div class="item">
+                            <h2>Same HW → two BLE stacks</h2>
+                        </div>
+                        <div class="item">
+                            <h2>EM<span class="em-bull"></span>eralds → energy efficiency metric</h2>
+                        </div>
+                        <div class="item">
+                            <h2>EM<span class="em-bull"></span>Script → consistent winner</h2>
+                        </div>
+                    </section>
+
+                    <section class="group">
+                        <div class="group-title">The Why</div>
+
+                        <div class="item">
+                            <h2>Fewer instructions → faster execution</h2>
+                        </div>
+                        <div class="item">
+                            <h2>Shorter active time → more sleep</h2>
+                        </div>
+                        <div class="item">
+                            <h2>Better locality → fewer memory cycles</h2>
+                        </div>
+                    </section>
+
+                    <section class="group">
+                        <div class="group-title">The Artifact</div>
+
+                        <div class="item">
+                            <h2>Portable EM<span class="em-bull"></span>Script → <code>BlueJoule.em.ts</code></h2>
+                        </div>
+                        <div class="item">
+                            <h2>EM<span class="em-bull"></span>porium → multiple distros</h2>
+                        </div>
+                        <div class="item">
+                            <h2>EM<span class="em-bull"></span>Tours → guided exploration</h2>
+                        </div>
+                    </section>
+
+                    <section class="group">
+                        <div class="group-title">The Links</div>
+
+                        <div class="item">
+                            <h2>The BlueJoule&trade; benchmark</h2>
+                        </div>
+                        <div class="item">
+                            <h2>The EM<span class="em-bull"></span>Script language</h2>
+                        </div>
+                        <div class="item">
+                            <h2>The EM<span class="em-bull"></span>porium repository</h2>
+                        </div>
+
+                        <div class="closing">Tiny Code → Every &mu;J Matters</div>
+                    </section>
+
+                </main>
+            </div>
+</div>
+</div>
+</body>
+</html>
