@@ -229,13 +229,21 @@ code.cmd-cs { color: #cd6f1c; }
                         <div class="group-title">The Shift</div>
 
                         <div class="item">
-                            <h2>Benchmarks → power (W), not energy (J)</h2>
+                            <h2>MCU datasheets → power (W), not energy (J)</h2>
+                            <p>An MCU vendor claims their ultra-low-power device will consume 700&thinsp;nA @ 3&thinsp;V when in deep-sleep.</p>
+                            <p>They also specify that their MCU will consume 50&thinsp;&mu;A / MHz when actively executing CoreMark&reg;.</p>
+                            <p>Fine&thinsp;&hellip;&thinsp; But not knowing how long the MCU executes, one cannot quantify overall <i>energy</i> efficiency.</p>
                         </div>
                         <div class="item">
-                            <h2>Legacy SW → leaves &mu;J on the table</h2>
+                            <h2>Software → adding the dimension of time</h2>
+                            <p>MCU datasheets define a set of power states; embedded SW governs the <i>time</i> spent in each state.</p>
+                            <p>That time ultimately determines total energy.</p>
                         </div>
                         <div class="item">
-                            <h2>Same HW → but novel SW</h2>
+                            <h2>Energy efficiency → the primary metric</h2>
+                            <p>Power specifications alone do not capture efficiency.</p>
+                            <p>Only by measuring energy can one quantify how effectively an embedded system performs its function.</p>
+                            <p>That measurement requires running embedded application SW with a live, characteristic workload.</p>
                         </div>
                     </section>
 
@@ -243,13 +251,21 @@ code.cmd-cs { color: #cd6f1c; }
                         <div class="group-title">The Reference</div>
 
                         <div class="item">
-                            <h2>BlueJoule&trade; → BLE advertising benchmark</h2>
+                            <h2>BlueJoule → BLE advertising benchmark</h2>
+                            <p>The BlueJoule&trade; benchmark provides a real-world reference for this shift &ndash; from power to energy.</p>
+                            <p>The benchmark defines a rudimentary <i>Bluetooth Low-Energy</i> workload &ndash; transmitting a 19-byte packet over three BLE advertising channels at a 1-second interval.</p>
+                            <p>BlueJoule also exposes the limits of relying on data&shy;sheet power specs when estimating battery life.</p>
                         </div>
                         <div class="item">
                             <h2>Multiple MCUs → varied voltage points</h2>
+                            <p>BlueJoule currently reports scores for BLE-capable MCUs from leading silicon vendors.&thinsp; A public GitHub repository houses all supporting artifacts.</p>
+                            <p>By convention, BlueJoule performs raw energy measurements with the MCU powered at 3.0&thinsp;V &ndash; aligned with the vendors' datasheets.</p>
+                            <p>BlueJoule also characterizes each MCU at its optimal operating voltage (as low as 1.5&thinsp;V), where the device maximizes its overall energy efficiency.</p>
                         </div>
                         <div class="item">
                             <h2>Vendor SDK stacks → shared baseline</h2>
+                            <p>A BLE software stack included within each vendor's SDK provides the requisite workload for measuring MCU energy consumption.</p>
+                            <p>With so much emphasis on finding the most energy-efficient MCU, the software stack typically remains constant &ndash; a fixture within the benchmark.</p>
                         </div>
                     </section>
 
@@ -263,7 +279,7 @@ code.cmd-cs { color: #cd6f1c; }
                             <h2>SW overhead → shifts burden to silicon</h2>
                         </div>
                         <div class="item">
-                            <h2>EM<span class="em-bull"></span>Script → reclaim energy</h2>
+                            <h2>EM<span class="em-bull"></span>Script → reclaim energy with software</h2>
                         </div>
                     </section>
 
@@ -271,13 +287,13 @@ code.cmd-cs { color: #cd6f1c; }
                         <div class="group-title">The Proof</div>
 
                         <div class="item">
-                            <h2>Same HW → two BLE stacks</h2>
+                            <h2>Same HW → compare two BLE stacks</h2>
                         </div>
                         <div class="item">
-                            <h2>EM<span class="em-bull"></span>eralds → energy efficiency metric</h2>
+                            <h2>EM<span class="em-bull"></span>eralds → quantify energy efficiency</h2>
                         </div>
                         <div class="item">
-                            <h2>EM<span class="em-bull"></span>Script → consistent winner</h2>
+                            <h2>EM<span class="em-bull"></span>Script → consistently better</h2>
                         </div>
                     </section>
 
@@ -288,10 +304,10 @@ code.cmd-cs { color: #cd6f1c; }
                             <h2>Fewer instructions → faster execution</h2>
                         </div>
                         <div class="item">
-                            <h2>Shorter active time → more sleep</h2>
+                            <h2>Less CPU activity → more time asleep</h2>
                         </div>
                         <div class="item">
-                            <h2>Better locality → fewer memory cycles</h2>
+                            <h2>Reduced memory access → greater efficiency</h2>
                         </div>
                     </section>
 
@@ -302,10 +318,10 @@ code.cmd-cs { color: #cd6f1c; }
                             <h2>Portable EM<span class="em-bull"></span>Script → <code>BlueJoule.em.ts</code></h2>
                         </div>
                         <div class="item">
-                            <h2>EM<span class="em-bull"></span>porium → multiple distros</h2>
+                            <h2>EM<span class="em-bull"></span>porium → multiple MCU distros</h2>
                         </div>
                         <div class="item">
-                            <h2>EM<span class="em-bull"></span>Tours → guided exploration</h2>
+                            <h2>EM<span class="em-bull"></span>Tours → guided code exploration</h2>
                         </div>
                     </section>
 
