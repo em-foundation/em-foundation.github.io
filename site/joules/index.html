@@ -253,7 +253,7 @@ code.cmd-cs { color: #cd6f1c; }
                         <div class="item">
                             <h2>BlueJoule → BLE advertising benchmark</h2>
                             <p>The BlueJoule&trade; benchmark provides a real-world reference for this shift &ndash; from power to energy.</p>
-                            <p>The benchmark defines a rudimentary <i>Bluetooth Low-Energy</i> workload &ndash; transmitting a 19-byte packet over three BLE advertising channels at a 1-second interval.</p>
+                            <p>The benchmark defines a rudimentary <i>Bluetooth Low-Energy</i> workload &ndash; transmitting 19 bytes over three BLE advertising channels at 0&thinsp;dB, once per second.</p>
                             <p>BlueJoule also exposes the limits of relying on data&shy;sheet power specs when estimating battery life.</p>
                         </div>
                         <div class="item">
@@ -274,12 +274,27 @@ code.cmd-cs { color: #cd6f1c; }
 
                         <div class="item">
                             <h2>Legacy stacks → hidden inefficiencies</h2>
+                            <p>Consider this capture of a BLE advertising event.</p>
+                            <figure class="code">
+                                <img class="code-shot" src="fig-1.png" alt="BLE Advertising Event">
+                                <div class="gallery-caption">BLE Advertising Event &ndash; Energy Consumption</div>
+                            </figure>
+                            <p>The capture shows three transmission bursts typical of a BLE advertising event.</p>
+                            <p>The time to transmit the BlueJoule packet determines the width of these pulses; the height matches the TX power spec of the MCU's radio.</p>
+                            <p>While these peaks dominate the capture's skyline, they account for less than <i>half</i> of the total energy consumed by this advertising event.</p>
+                            <p>Executing the BLE software stack in fact dominates the area under the power curve.</p>
+                                   
                         </div>
                         <div class="item">
                             <h2>SW overhead → shifts burden to silicon</h2>
+                            <p>Vendor BLE stacks often weigh-in at over 200K bytes of code &ndash; replete with abstraction layers which incur significant run-time (hence energy) overhead.</p>
+                            <p>While ripe for re-factoring, silicon vendor time-to-market pressure often dictates "throwing memory and MIPs" at the SW within next-generation MCUs.</p>
                         </div>
                         <div class="item">
                             <h2>EM<span class="em-bull"></span>Script → reclaim energy with software</h2>
+                            <p>An alternative software approach can eliminate much of this overhead &ndash; reducing execution time and hence shrinking the area under the power curve.</p>
+                            <p>The EM<span class="em-bull"></span>Script programming language employs a novel translator which generates tiny, specialized target firmware &ndash; often outperforming legacy C code.</p>
+                            <p>Less time active → more time asleep.</p>
                         </div>
                     </section>
 
