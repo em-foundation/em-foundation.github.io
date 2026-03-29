@@ -117,6 +117,14 @@ main { padding: 8px 18px 24px 18px; }
     line-height: 1;
 }
 
+.em-arrow::before {
+    content: '⟶';
+    color: var(--em);
+    font-weight: 600;
+    display: inline-block;
+    transform: translateY(-0.05em);
+}
+
 .group {
     margin-top: 18px;
     padding-top: 14px;
@@ -229,18 +237,18 @@ code.cmd-cs { color: #cd6f1c; }
                         <div class="group-title">The Shift</div>
 
                         <div class="item">
-                            <h2>MCU datasheets → power (W), not energy (J)</h2>
+                            <h2>MCU datasheets <span class="em-arrow"></span> power (W), not energy (J)</h2>
                             <p>An MCU vendor claims their ultra-low-power device will consume 700&thinsp;nA @ 3&thinsp;V when in deep-sleep.</p>
                             <p>They also specify that their MCU will consume 50&thinsp;&mu;A / MHz when actively executing CoreMark&reg;.</p>
                             <p>Fine&thinsp;&hellip;&thinsp; But not knowing how long the MCU executes, one cannot quantify overall <i>energy</i> efficiency.</p>
                         </div>
                         <div class="item">
-                            <h2>Software → adding the dimension of time</h2>
+                            <h2>Software <span class="em-arrow"></span> adding the dimension of time</h2>
                             <p>MCU datasheets define a set of power states; embedded SW governs the <i>time</i> spent in each state.</p>
                             <p>That time ultimately determines total energy.</p>
                         </div>
                         <div class="item">
-                            <h2>Energy efficiency → the primary metric</h2>
+                            <h2>Energy efficiency <span class="em-arrow"></span> the primary metric</h2>
                             <p>Power specifications alone do not capture efficiency.</p>
                             <p>Only by measuring energy can one quantify how effectively an embedded system performs its function.</p>
                             <p>That measurement requires running embedded application SW with a live, characteristic workload.</p>
@@ -251,19 +259,19 @@ code.cmd-cs { color: #cd6f1c; }
                         <div class="group-title">The Reference</div>
 
                         <div class="item">
-                            <h2>BlueJoule → BLE advertising benchmark</h2>
+                            <h2>BlueJoule <span class="em-arrow"></span> BLE advertising benchmark</h2>
                             <p>The BlueJoule&trade; benchmark provides a real-world reference for this shift &ndash; from power to energy.</p>
                             <p>The benchmark defines a rudimentary <i>Bluetooth Low-Energy</i> workload &ndash; transmitting 19 bytes over three BLE advertising channels at 0&thinsp;dB, once per second.</p>
                             <p>BlueJoule also exposes the limits of relying on data&shy;sheet power specs when estimating battery life.</p>
                         </div>
                         <div class="item">
-                            <h2>Multiple MCUs → varied voltage points</h2>
+                            <h2>Multiple MCUs <span class="em-arrow"></span> varied voltage points</h2>
                             <p>BlueJoule currently reports scores for BLE-capable MCUs from leading silicon vendors.&thinsp; A public GitHub repository houses all supporting artifacts.</p>
                             <p>By convention, BlueJoule performs raw energy measurements with the MCU powered at 3.0&thinsp;V &ndash; aligned with the vendors' datasheets.</p>
                             <p>BlueJoule also characterizes each MCU at its optimal operating voltage (as low as 1.5&thinsp;V), where the device maximizes its overall energy efficiency.</p>
                         </div>
                         <div class="item">
-                            <h2>Vendor SDK stacks → shared baseline</h2>
+                            <h2>Vendor SDK stacks <span class="em-arrow"></span> shared baseline</h2>
                             <p>A BLE software stack included within each vendor's SDK provides the requisite workload for measuring MCU energy consumption.</p>
                             <p>With so much emphasis on finding the most energy-efficient MCU, the software stack typically remains constant &ndash; a fixture within the benchmark.</p>
                         </div>
@@ -273,7 +281,7 @@ code.cmd-cs { color: #cd6f1c; }
                         <div class="group-title">The Challenge</div>
 
                         <div class="item">
-                            <h2>Legacy stacks → hidden inefficiencies</h2>
+                            <h2>Legacy stacks <span class="em-arrow"></span> hidden inefficiencies</h2>
                             <p>Consider this capture of a BLE advertising event.</p>
                             <figure class="code">
                                 <img class="code-shot" src="fig-1.png" alt="BLE Advertising Event">
@@ -286,15 +294,15 @@ code.cmd-cs { color: #cd6f1c; }
                                    
                         </div>
                         <div class="item">
-                            <h2>SW overhead → shifts burden to silicon</h2>
+                            <h2>SW overhead <span class="em-arrow"></span> shifts burden to silicon</h2>
                             <p>Vendor BLE stacks often weigh-in at over 200K bytes of code &ndash; replete with abstraction layers which incur significant run-time (hence energy) overhead.</p>
                             <p>While ripe for re-factoring, silicon vendor time-to-market pressure often dictates "throwing memory and MIPs" at the SW within next-generation MCUs.</p>
                         </div>
                         <div class="item">
-                            <h2>EM<span class="em-bull"></span>Script → reclaim energy with software</h2>
+                            <h2>EM<span class="em-bull"></span>Script <span class="em-arrow"></span> reclaim energy with software</h2>
                             <p>An alternative software approach can eliminate much of this overhead &ndash; reducing execution time and hence shrinking the area under the power curve.</p>
                             <p>The EM<span class="em-bull"></span>Script programming language employs a novel translator which generates tiny, specialized target firmware &ndash; often outperforming legacy C code.</p>
-                            <p>Less time active → more time asleep.</p>
+                            <p>Less time active <span class="em-arrow"></span> more time asleep.</p>
                         </div>
                     </section>
 
@@ -302,13 +310,13 @@ code.cmd-cs { color: #cd6f1c; }
                         <div class="group-title">The Proof</div>
 
                         <div class="item">
-                            <h2>Same HW → compare two BLE stacks</h2>
+                            <h2>Same HW <span class="em-arrow"></span> compare two BLE stacks</h2>
                         </div>
                         <div class="item">
-                            <h2>EM<span class="em-bull"></span>eralds → quantify energy efficiency</h2>
+                            <h2>EM<span class="em-bull"></span>eralds <span class="em-arrow"></span> quantify energy efficiency</h2>
                         </div>
                         <div class="item">
-                            <h2>EM<span class="em-bull"></span>Script → consistently better</h2>
+                            <h2>EM<span class="em-bull"></span>Script <span class="em-arrow"></span> consistently better</h2>
                         </div>
                     </section>
 
@@ -316,13 +324,13 @@ code.cmd-cs { color: #cd6f1c; }
                         <div class="group-title">The Why</div>
 
                         <div class="item">
-                            <h2>Fewer instructions → faster execution</h2>
+                            <h2>Fewer instructions <span class="em-arrow"></span> faster execution</h2>
                         </div>
                         <div class="item">
-                            <h2>Less CPU activity → more time asleep</h2>
+                            <h2>Less CPU activity <span class="em-arrow"></span> more time asleep</h2>
                         </div>
                         <div class="item">
-                            <h2>Reduced memory access → greater efficiency</h2>
+                            <h2>Reduced memory access <span class="em-arrow"></span> greater efficiency</h2>
                         </div>
                     </section>
 
@@ -330,13 +338,13 @@ code.cmd-cs { color: #cd6f1c; }
                         <div class="group-title">The Artifact</div>
 
                         <div class="item">
-                            <h2>Portable EM<span class="em-bull"></span>Script → <code>BlueJoule.em.ts</code></h2>
+                            <h2>Portable EM<span class="em-bull"></span>Script <span class="em-arrow"></span> <code>BlueJoule.em.ts</code></h2>
                         </div>
                         <div class="item">
-                            <h2>EM<span class="em-bull"></span>porium → multiple MCU distros</h2>
+                            <h2>EM<span class="em-bull"></span>porium <span class="em-arrow"></span> multiple MCU distros</h2>
                         </div>
                         <div class="item">
-                            <h2>EM<span class="em-bull"></span>Tours → guided code exploration</h2>
+                            <h2>EM<span class="em-bull"></span>Tours <span class="em-arrow"></span> guided code exploration</h2>
                         </div>
                     </section>
 
@@ -353,7 +361,7 @@ code.cmd-cs { color: #cd6f1c; }
                             <h2>The EM<span class="em-bull"></span>porium repository</h2>
                         </div>
 
-                        <div class="closing">Tiny Code → Every &mu;J Matters</div>
+                        <div class="closing">Tiny Code <span class="em-arrow"></span> Every &mu;J Matters</div>
                     </section>
 
                 </main>
