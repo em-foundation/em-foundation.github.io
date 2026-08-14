@@ -7,6 +7,7 @@
     --accent: #d9d9de;
     --em: hsl(165, 100%, 60%);
     --em-muted: hsl(165, 65%, 55%);
+    --accent: hsl(195, 100%, 70%);
     --design-w: 420px;
     --pad: 24px;
 }
@@ -250,4 +251,11 @@ code.cmd-cs {
     letter-spacing: 0.08em;
     color: var(--muted);
     opacity: 0.75;
+}
+
+.step-bull {
+    color: var(--accent);
+    font-size: 1.05em;
+    font-weight: 700;
+    margin-right: 6px;
 }
