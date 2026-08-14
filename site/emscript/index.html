@@ -1,429 +1,568 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>EM•Script — Tiny Code for Tiny Chips</title>
 
-    <title>EM•Script — Tiny Code for Tiny Chips</title>
+        <!-- OG -->
+        <meta property="og:title" content="EM•Script" />
+        <meta
+            property="og:description"
+            content="Tiny Code for Tiny Chips. When every byte of memory and µJoule of energy really matters."
+        />
+        <meta
+            property="og:image"
+            content="https://openem.org/emscript/preview.png"
+        />
+        <meta property="og:url" content="https://openem.org/emscript" />
 
-    <!-- OG -->
-    <meta property='og:title' content='EM•Script'>
-    <meta property='og:description' content='Tiny Code for Tiny Chips. When every byte of memory and µJoule of energy really matters.'>
-    <meta property='og:image' content='https://openem.org/emscript/preview.png'>    
-    <meta property='og:url' content='https://openem.org/emscript'>
-    
-    <!-- GA -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZX6DDEFLV"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        <!-- GA -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-TZX6DDEFLV"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || []
+            function gtag() {
+                dataLayer.push(arguments)
+            }
+            gtag('js', new Date())
 
-    gtag('config', 'G-TZX6DDEFLV');
-    </script>    
+            gtag('config', 'G-TZX6DDEFLV')
+        </script>
 
-     <link rel="icon" type="image/png" href="favicon.png">
-<style>
-:root {
-    --bg: #0b0b0c;
-    --page: #121214;
-    --ink: #f2f2f3;
-    --muted: #a7a7ad;
-    --rule: #2a2a2f;
-    --accent: #d9d9de;
-    --em: hsl(165, 100%, 60%);
-    --em-muted: hsl(165, 65%, 55%);
-    --design-w: 420px;
-    --pad: 24px;
-}
+        <link rel="icon" type="image/png" href="favicon.png" />
+        <link rel="stylesheet" href="../../article.css" />
+    </head>
 
-* { box-sizing: border-box; }
+    <body>
+        <div class="viewport">
+            <div class="page">
+                <!-- your existing frame content goes here -->
+                <div
+                    class="frame"
+                    role="document"
+                    aria-label="Mobile-column mockup"
+                >
+                    <header class="masthead">
+                        <h1>
+                            Introducing EM<span class="em-bull"></span>Script
+                        </h1>
+                        <img src="logo.png" class="logo" alt="EM logo" />
+                    </header>
 
-html, body { width: 100%; }
+                    <main>
+                        <section class="group">
+                            <div class="group-title">The Principle</div>
 
-body {
-    margin: 0;
-    padding: var(--pad);
-    background: var(--bg);
-    color: var(--ink);
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-    line-height: 1.45;
-    hyphens: auto;
-    overflow-wrap: break-word;
-}
+                            <div class="item">
+                                <h2>Every byte and &mu;Joule matters</h2>
+                                <p>
+                                    Programming resource-constrained MCUs
+                                    remains a constant challenge when developing
+                                    low-cost, low-power embedded systems.
+                                </p>
+                                <p>
+                                    Embedded SW design and implementation has an
+                                    ever-growing impact on system performance,
+                                    energy efficiency, and life-cycle costs.
+                                </p>
+                            </div>
+                            <div class="item">
+                                <h2>C leaves performance on the table</h2>
+                                <p>
+                                    After more than fifty years, the C
+                                    programming language continues to dominate
+                                    software development for embedded systems.
+                                </p>
+                                <p>
+                                    An ideal &ldquo;medium-level&rdquo; language
+                                    for 8-, 16-, and 32-bit MCUs, C programmers
+                                    can directly touch bare-metal HW using
+                                    structured SW.
+                                </p>
+                                <p>
+                                    But as systems grow more complex, C
+                                    programmers layer more macros, indirections,
+                                    and defensive APIs onto their ever-expanding
+                                    codebase.
+                                </p>
+                                <p>
+                                    Pushing C to the brink, attempts to mitigate
+                                    program complexity can in fact incur
+                                    additional <i>run-time</i> overhead &ndash;
+                                    wasting time, space, and power.
+                                </p>
+                            </div>
+                            <div class="item">
+                                <h2>A new language for embedded systems</h2>
+                                <p>
+                                    EM<span class="em-bull"></span>Script
+                                    reverses the embedded C trajectory &ndash;
+                                    offering higher-level language constructs
+                                    which do not incur higher levels of run-time
+                                    overhead.
+                                </p>
+                                <p>
+                                    Using a novel translator which emits C++
+                                    object code from TypeScript-based sources,
+                                    EM<span class="em-bull"></span>Script
+                                    programs regularly outperform legacy C.
+                                </p>
+                                <p>
+                                    But unlike other mainstream languages which
+                                    evolved from C, EM<span
+                                        class="em-bull"
+                                    ></span
+                                    >Script expressly focuses on reducing the
+                                    size of embedded firmware.
+                                </p>
+                                <p>
+                                    Armed with EM<span class="em-bull"></span
+                                    >Script, applications consuming hundreds of
+                                    kilobytes could now run in (say) 32K of SRAM
+                                    &ndash; at lower power levels and cost
+                                    points
+                                </p>
+                            </div>
+                        </section>
 
-.viewport {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    background: var(--bg);
-}
+                        <section class="group">
+                            <div class="group-title">The Proof</div>
 
-.page { width: var(--design-w); }
+                            <div class="item">
+                                <h2>
+                                    Show me the code&hellip;&nbsp; &ldquo;hello
+                                    world&rdquo;
+                                </h2>
+                                <p>
+                                    You can&rsquo;t call yourself a programming
+                                    language if you can&rsquo;t do this:&thinsp;
+                                    👋&thinsp;🌎
+                                </p>
+                                <figure class="code">
+                                    <img
+                                        class="code-shot"
+                                        src="snip-1.png"
+                                        alt="EM•Script hello world"
+                                    />
+                                </figure>
+                                <p>
+                                    Unusual
+                                    <code class="cmd-cd">printf</code> syntax
+                                    &ndash; perfectly legal TypeScript.
+                                </p>
+                            </div>
+                            <div class="item">
+                                <h2>
+                                    Show me the code&hellip;&nbsp; blink that
+                                    LED
+                                </h2>
+                                <p>
+                                    The true
+                                    <i>&ldquo;hello world&rdquo;</i> example for
+                                    any embedded programming platform:
+                                </p>
+                                <figure class="code">
+                                    <img
+                                        class="code-shot"
+                                        src="snip-2.png"
+                                        alt="EM•Script blinker"
+                                    />
+                                </figure>
+                                <p>
+                                    ~1K of code in EM<span
+                                        class="em-bull"
+                                    ></span
+                                    >Script &ndash;
+                                    <i>how big is yours</i>&thinsp;??
+                                </p>
+                            </div>
+                            <div class="item">
+                                <h2>
+                                    Show me the code&hellip;&nbsp; bit-bang UART
+                                    TX
+                                </h2>
+                                <p>
+                                    100% portable EM<span class="em-bull"></span
+                                    >Script &ndash; higher-level programming
+                                    <i>and</i> higher-levels of program
+                                    performance.
+                                </p>
+                                <figure class="code">
+                                    <img
+                                        class="code-shot"
+                                        src="snip-3.png"
+                                        alt="EM•Script bit-banged UART"
+                                    />
+                                </figure>
+                                <p>
+                                    The <b><code>em$meta</code></b> and
+                                    <b><code>em$targ</code></b> labels hint at
+                                    something deeper within the EM<span
+                                        class="em-bull"
+                                    ></span
+                                    >Script translator as it processes
+                                    <code class="cmd-cs">$config</code> and
+                                    <code class="cmd-cs">$proxy</code>
+                                    constructs.
+                                </p>
+                            </div>
+                        </section>
 
-.frame {
-    width: var(--design-w);
-    border: 2px solid var(--rule);
-    border-radius: 18px;
-    background: var(--page);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-    overflow: hidden;
-    margin: 0 auto;
-}
+                        <section class="group">
+                            <div class="group-title">The Mechanism</div>
 
-/* scale down on narrow viewports (ANDROID: prefer zoom) */
-@media (max-width: 468px) {
-    .frame {
-        transform-origin: top center;
-        transform: scale(calc((100vw - (2 * var(--pad))) / var(--design-w)));
-    }
-}
-@supports (zoom: 1) {
-    @media (max-width: 468px) {
-        .frame {
-            transform: none;
-            zoom: calc((100vw - (2 * var(--pad))) / var(--design-w));
-        }
-    }
-}
+                            <div class="item">
+                                <h2>
+                                    At first glance &ndash; a simple transpiler
+                                </h2>
+                                <figure class="code">
+                                    <img
+                                        class="code-shot"
+                                        src="fig-1.png"
+                                        alt="Simple Transpiler"
+                                    />
+                                </figure>
+                                <p>
+                                    A command-line tool, the EM<span
+                                        class="em-bull"
+                                    ></span
+                                    >Script translator emits C++ code for every
+                                    <code>.em.ts</code> source file the
+                                    application may ultimately
+                                    <code class="cmd-ck">import</code>.
+                                </p>
+                                <p>
+                                    Using internal TypeScript APIs, the
+                                    translator handles
+                                    <code class="cmd-cs">$config</code> and
+                                    <code class="cmd-cs">$proxy</code>
+                                    constructs by overlaying the semantics of
+                                    EM<span class="em-bull"></span>Script onto
+                                    TypeScript syntax.
+                                </p>
+                                <p>
+                                    The translator first emits
+                                    <code>Mod.[hpp,cpp]</code> files for every
+                                    EM<span class="em-bull"></span>Script
+                                    module, and then arranges for
+                                    <code>main.cpp</code> to ultimately
+                                    <code class="cmd-ck">#include</code> these
+                                    generated files.
+                                </p>
+                                <p>
+                                    Feeding one merged C++ file to the
+                                    downstream MCU compiler enables
+                                    <i>whole program optimization</i>, which
+                                    markedly shrinks run-time code.
+                                </p>
+                            </div>
+                            <div class="item">
+                                <h2>
+                                    The innovation &ndash; build-time
+                                    configuration
+                                </h2>
+                                <figure class="code">
+                                    <img
+                                        class="code-shot"
+                                        src="fig-2.png"
+                                        alt="Build-Time Configuration"
+                                    />
+                                </figure>
+                                <p>
+                                    The <i>configuration</i> phase &ndash;
+                                    upstream from program compilation &ndash;
+                                    stands as the defining innovation of the
+                                    EM<span class="em-bull"></span>Script
+                                    translation flow.
+                                </p>
+                                <p>
+                                    As in target compilation, the translator
+                                    first emits a <code>Mod.em.js</code> file
+                                    for every EM<span class="em-bull"></span
+                                    >Script module.&thinsp;
+                                    <code>main.js</code> will then
+                                    <code class="cmd-ck">import</code> all
+                                    generated code.
+                                </p>
+                                <p>
+                                    But unlike target compilation,
+                                    <code>main.js</code> serves as the
+                                    application's <i>meta-program</i> &ndash;
+                                    running on a Node.js desktop rather than a
+                                    resource-constrained MCU.
+                                </p>
+                                <p>
+                                    The configuration phase in fact serves as a
+                                    build-time <i>staging area</i> &ndash;
+                                    enabling an unconstrained
+                                    &ldquo;dry-run&rdquo; of the target
+                                    application program.
+                                </p>
+                                <p>
+                                    Just as modules contribute
+                                    <i>target</i> functions invoked at run-time,
+                                    they can also shape program configuration
+                                    through build-time <i>meta</i> functions.
+                                </p>
+                                <p>
+                                    With every EM<span class="em-bull"></span
+                                    >Script module actively participating, a new
+                                    category of
+                                    <i>application-driven</i> optimizations
+                                    starts to emerge.
+                                </p>
+                            </div>
+                            <div class="item">
+                                <h2>
+                                    EM<span class="em-bull"></span>Script
+                                    &ndash; its own meta-language
+                                </h2>
+                                <p>
+                                    Using the same language syntax and semantics
+                                    to express <i>target</i> as well as
+                                    <i>meta</i> functions reflects the novelty
+                                    of the EM<span class="em-bull"></span>Script
+                                    translator.
+                                </p>
+                                <p>
+                                    In this flow, intrinsic constructs like
+                                    <code class="cmd-cs">$config</code>
+                                    parameters and
+                                    <code class="cmd-cs">$proxy</code> modules
+                                    act as <i>build-time</i> variables which
+                                    harden into <i>run-time</i> constants.
+                                </p>
+                                <p>
+                                    With all of Node.js available during
+                                    configuration, meta-functions can bring
+                                    extensive resources to bear when computing
+                                    <code class="cmd-cs">$config</code> or
+                                    <code class="cmd-cs">$proxy</code> values.
+                                </p>
+                                <p>
+                                    Once frozen, downstream compilation can fold
+                                    <code class="cmd-cs">$config</code> values
+                                    across the target program as well as
+                                    directly call (or even <code>inline</code>)
+                                    <code class="cmd-cs">$proxy</code> methods.
+                                </p>
+                                <p>
+                                    Less memory, more compact code, no run-time
+                                    indirection &ndash; just higher-level
+                                    programming with higher levels of run-time
+                                    performance.
+                                </p>
+                            </div>
+                        </section>
 
-header {
-    padding: 18px 18px 24px 18px;
-    border-bottom: 1px solid var(--rule);
-}
+                        <section class="group">
+                            <div class="group-title">The Environment</div>
 
-.masthead {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+                            <div class="item">
+                                <h2>Use VS Code &ndash; familiar and proven</h2>
+                                <p>
+                                    VS Code draws developers working in multiple
+                                    languages and application domains &ndash;
+                                    including embedded programming in C/C++.
+                                </p>
+                            </div>
+                            <div class="item">
+                                <h2>
+                                    Write TypeScript &ndash; built-in tooling
+                                </h2>
+                                <p>
+                                    Using TypeScript brings autocompletion,
+                                    navigation, refactoring, formatting, and
+                                    diagnostics directly from VS Code&rsquo;s
+                                    built-in language services.
+                                </p>
+                            </div>
+                            <div class="item">
+                                <h2>
+                                    Add EM<span class="em-bull"></span>Builder
+                                    &ndash; from tour to target
+                                </h2>
+                                <p>
+                                    The EM<span class="em-bull"></span>Builder
+                                    extension augments VS Code with EM<span
+                                        class="em-bull"
+                                    ></span
+                                    >Script-centric views, guided tours, and
+                                    integrated
+                                    build&thinsp;<b>&middot;</b>&thinsp;run
+                                    workflows.
+                                </p>
+                                <figure class="code">
+                                    <img
+                                        class="code-shot"
+                                        src="screen-1.png"
+                                        alt="EM•Builder Views"
+                                    />
+                                    <div class="gallery-caption">
+                                        Content browser <b>&middot;</b> Guided
+                                        tours <b>&middot;</b> Editing experience
+                                    </div>
+                                </figure>
+                                <figure class="code">
+                                    <img
+                                        class="code-shot"
+                                        src="screen-2.png"
+                                        alt="EM•Builder Build · Run"
+                                    />
+                                    <div class="gallery-caption">
+                                        Quick-start Pi Pico simulator
+                                        <b>&middot;</b> Signal capture and
+                                        analysis
+                                    </div>
+                                </figure>
+                                <figure class="code">
+                                    <img
+                                        class="code-shot"
+                                        src="screen-3.png"
+                                        alt="EM•Script Grammar"
+                                    />
+                                    <div class="gallery-caption">
+                                        Interactive railroad-track grammar
+                                    </div>
+                                </figure>
+                            </div>
+                        </section>
 
-.logo {
-    width: 44px;
-    height: 44px;
-    opacity: 0.9;
-    transform: translateY(4px);
-}
+                        <section class="group">
+                            <div class="group-title">The Foundation</div>
 
-.kicker {
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
+                            <div class="item">
+                                <h2>Backed by The EM Foundation</h2>
+                                <p>
+                                    The EM Foundation promotes, sustains, and
+                                    evolves EM™ programming technology for the
+                                    embedded systems community.
+                                </p>
+                                <p>
+                                    Formed in 2023 as a California public
+                                    benefit corporation, it operates as a
+                                    501(c)(3) nonprofit.
+                                </p>
+                            </div>
+                            <div class="item">
+                                <h2>15+ years of real-world experience</h2>
+                                <p>
+                                    Since 2010, EM programming technology has
+                                    supported more than twenty 8-, 16-, and
+                                    32-bit MCUs across a dozen silicon vendors.
+                                </p>
+                                <p>
+                                    Commercial deployments on select platforms
+                                    have demonstrated measurable reductions in
+                                    code size, power consumption, and system
+                                    cost.
+                                </p>
+                            </div>
+                            <div class="item" id="emporium">
+                                <h2>
+                                    EM<span class="em-bull"></span>porium
+                                    &ndash; the nexus of EM<span
+                                        class="em-bull"
+                                    ></span
+                                    >Script content
+                                </h2>
+                                <p>
+                                    View it, visit it, follow it, install it,
+                                    learn it, discuss it, and ultimately
+                                    contribute your own content to
+                                    it&thinsp;&hellip;
+                                </p>
+                                <p>
+                                    🎬&thinsp;<a
+                                        class="repo-link"
+                                        href="ani-1.html"
+                                        >Watch EM&bull;Script in action ➜</a
+                                    >
+                                </p>
+                                <p>
+                                    🎬&thinsp;<a
+                                        class="repo-link"
+                                        href="ani-2.html"
+                                        >Watch an introductory tour ➜</a
+                                    >
+                                </p>
+                                <p>
+                                    🎬&thinsp;<a
+                                        class="repo-link"
+                                        href="ani-3.html"
+                                        >Watch a grammar walk-through ➜</a
+                                    >
+                                </p>
+                                <p>
+                                    🔍<a
+                                        class="repo-link"
+                                        href="https://github.com/em-foundation/emporium/blob/dev/docs/ReadMore.md"
+                                        target="_blank"
+                                        rel="noopener"
+                                    >
+                                        Explore the EM<span
+                                            class="em-bull"
+                                        ></span
+                                        >porium on GitHub ➜
+                                    </a>
+                                </p>
+                            </div>
+                        </section>
 
-h1 {
-    margin: 8px 0 0 0;
-    font-size: 22px;
-    font-weight: 650;
-    letter-spacing: -0.01em;
-}
+                        <section class="group">
+                            <div class="group-title">The Vision</div>
 
-main { padding: 8px 18px 24px 18px; }
-
-.em-bull::before {
-    content: '•';
-    color: var(--em);
-    display: inline-block;
-    margin: 0 0.08em;
-    font-family: 'Segoe UI Symbol','Apple Symbols','Noto Sans Symbols',sans-serif;
-    font-size: 1em;
-    font-weight: 700;
-    position: relative;
-    top: 0;
-    line-height: 1;
-}
-
-.em-arrow::before {
-    content: '→';
-    color: var(--em);
-    font-family: 'Segoe UI Symbol','Apple Symbols','Noto Sans Symbols','Arial Unicode MS',sans-serif;
-    font-weight: 700;
-    display: inline-block;
-    transform: translateY(-0.1em);
-}
-
-.group {
-    margin-top: 18px;
-    padding-top: 14px;
-    border-top: 1px solid var(--em);
-}
-
-.group:first-child {
-    margin-top: 0;
-    padding-top: 10px;
-    border-top: none;
-}
-
-.group-title {
-    display: block;
-    text-align: right;
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin: 0 0 20px 0;
-}
-
-.item {
-    padding: 3px 0;
-    margin-top: 14px;
-    border-bottom: 2px solid rgba(255,255,255,0.10);
-}
-
-.item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-h2 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 650;
-    letter-spacing: -0.01em;
-}
-
-.hint {
-    margin: 12px 0 0 0;
-    font-size: 12px;
-    color: var(--muted);
-}
-
-.code-shot {
-    display: block;
-    width: 100%;
-    height: auto;
-    padding-top: 6px;
-}
-
-figure.code { margin: 18px 0 6px 0; }
-
-figure.code figcaption {
-    margin: 6px 0 0 0;
-    font-size: 12px;
-    color: var(--muted);
-}
-
-.gallery-caption {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: rgba(255,255,255,0.8);
-    margin-top: 0.6em;
-    text-align: center;
-}
-
-.repo-link {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--em-muted);
-    text-decoration: none;
-    padding-bottom: 2px;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.15s ease;
-}
-
-.repo-link:hover { border-bottom-color: var(--muted); }
-
-code.cmd-cd { color: red; }
-code.cmd-ck { color: #c586c0; }
-code.cmd-cs { color: #cd6f1c; }
-
-.closing {
-    text-align: center;
-    font-size: 1.35em;
-    font-weight: 700;
-    color: var(--em);
-    margin-top: 16px;
-    letter-spacing: .02em;
-}
-</style>
-</head>
-
-<body>
-    <div class="viewport">
-        <div class="page">
-            <!-- your existing frame content goes here -->
-            <div class="frame" role="document" aria-label="Mobile-column mockup">
-
-                <header class="masthead">
-                    <h1>Introducing EM<span class="em-bull"></span>Script</h1>
-                    <img src="logo.png" class="logo" alt="EM logo">
-                </header>
-
-                <main>
-                    <section class="group">
-                        <div class="group-title">The Principle</div>
-
-                        <div class="item">
-                            <h2>Every byte and &mu;Joule matters</h2>
-                            <p>Programming resource-constrained MCUs remains a constant challenge when developing low-cost, low-power embedded systems.</p>
-                            <p>Embedded SW design and implementation has an ever-growing impact on system performance, energy efficiency, and life-cycle costs.</p>
+                            <div class="item">
+                                <h2>
+                                    An EM<span class="em-bull"></span>porium of
+                                    tiny code
+                                </h2>
+                                <p>
+                                    A shared repository of reusable EM<span
+                                        class="em-bull"
+                                    ></span
+                                    >Script content for resource-constrained
+                                    embedded systems, where every byte and
+                                    &mu;Joule matters.
+                                </p>
+                            </div>
+                            <div class="item">
+                                <h2>10× smaller than legacy C</h2>
+                                <p>
+                                    Higher-level language constructs combined
+                                    with build-time specialization enable
+                                    order-of-magnitude reductions in run-time
+                                    code size.
+                                </p>
+                            </div>
+                            <div class="item">
+                                <h2>10× impact on silicon PPA</h2>
+                                <p>
+                                    Comparable order-of-magnitude improvements
+                                    in
+                                    <i
+                                        >power &middot; performance &middot;
+                                        area</i
+                                    >
+                                    for next-generation MCUs targeting
+                                    deeply-embedded systems.
+                                </p>
+                            </div>
+                            <div class="closing">
+                                Tiny Code <span class="em-arrow"></span> Tiny
+                                Chips
+                            </div>
+                        </section>
+                        <div class="article-meta">
+                            <time datetime="2026-08-14">08/14/26</time>
                         </div>
-                        <div class="item">
-                            <h2>C leaves performance on the table</h2>
-                            <p>After more than fifty years, the C programming language continues to dominate software development for embedded systems.</p>
-                            <p>An ideal &ldquo;medium-level&rdquo; language for 8-, 16-, and 32-bit MCUs, C programmers can directly touch bare-metal HW using structured SW.</p>
-                            <p>But as systems grow more complex, C programmers layer more macros, indirections, and defensive APIs onto their ever-expanding codebase.</p>
-                            <p>Pushing C to the brink, attempts to mitigate program complexity can in fact incur additional <i>run-time</i> overhead &ndash; wasting time, space, and power.</p>
-                        </div>
-                        <div class="item">
-                            <h2>A new language for embedded systems</h2>
-                            <p>EM<span class="em-bull"></span>Script reverses the embedded C trajectory &ndash; offering higher-level language constructs which do not incur higher levels of run-time overhead.</p>
-                            <p>Using a novel translator which emits C++ object code from TypeScript-based sources, EM<span class="em-bull"></span>Script programs regularly outperform legacy C.</p>
-                            <p>But unlike other mainstream languages which evolved from C, EM<span class="em-bull"></span>Script expressly focuses on reducing the size of embedded firmware.</p>
-                            <p>Armed with EM<span class="em-bull"></span>Script, applications consuming hundreds of kilobytes could now run in (say) 32K of SRAM &ndash; at lower power levels and cost points</p>
-                        </div>
-                    </section>
-
-                    <section class="group">
-                        <div class="group-title">The Proof</div>
-
-                        <div class="item">
-                            <h2>Show me the code&hellip;&nbsp; &ldquo;hello world&rdquo;</h2>
-                            <p>You can&rsquo;t call yourself a programming language if you can&rsquo;t do this:&thinsp; 👋&thinsp;🌎</p>
-                            <figure class="code">
-                                <img class="code-shot" src="snip-1.png" alt="EM•Script hello world">
-                            </figure>
-                            <p>Unusual <code class="cmd-cd">printf</code> syntax &ndash; perfectly legal TypeScript.</p>
-                        </div>
-                        <div class="item">
-                            <h2>Show me the code&hellip;&nbsp; blink that LED</h2>
-                            <p>The true <i>&ldquo;hello world&rdquo;</i> example for any embedded programming platform:</p>
-                            <figure class="code">
-                                <img class="code-shot" src="snip-2.png" alt="EM•Script blinker">
-                            </figure>
-                            <p>~1K of code in EM<span class="em-bull"></span>Script &ndash; <i>how big is yours</i>&thinsp;??</p>
-                        </div>
-                        <div class="item">
-                            <h2>Show me the code&hellip;&nbsp; bit-bang UART TX</h2>
-                            <p>100% portable EM<span class="em-bull"></span>Script &ndash; higher-level programming <i>and</i> higher-levels of program performance.</p>
-                            <figure class="code">
-                                <img class="code-shot" src="snip-3.png" alt="EM•Script bit-banged UART">
-                            </figure>
-                            <p>The <b><code>em$meta</code></b> and <b><code>em$targ</code></b> labels hint at something deeper within the EM<span class="em-bull"></span>Script translator as it processes <code class="cmd-cs">$config</code> and <code class="cmd-cs">$proxy</code> constructs.</p>
-                        </div>
-                    </section>
-
-
-                    <section class="group">
-                        <div class="group-title">The Mechanism</div>
-
-                        <div class="item">
-                            <h2>At first glance &ndash; a simple transpiler</h2>
-                            <figure class="code">
-                                <img class="code-shot" src="fig-1.png" alt="Simple Transpiler">
-                            </figure>
-                            <p>A command-line tool, the EM<span class="em-bull"></span>Script translator emits C++ code for every <code>.em.ts</code> source file the application may ultimately <code class="cmd-ck">import</code>.</p>
-                            <p>Using internal TypeScript APIs, the translator handles <code class="cmd-cs">$config</code> and <code class="cmd-cs">$proxy</code> constructs by overlaying the semantics of EM<span class="em-bull"></span>Script onto TypeScript syntax.</p>
-                            <p>The translator first emits <code>Mod.[hpp,cpp]</code> files for every EM<span class="em-bull"></span>Script module, and then arranges for <code>main.cpp</code> to ultimately <code class="cmd-ck">#include</code> these generated files.</p>
-                            <p>Feeding one merged C++ file to the downstream MCU compiler enables <i>whole program optimization</i>, which markedly shrinks run-time code.</p>
-                        </div>
-                        <div class="item">
-                            <h2>The innovation &ndash; build-time configuration</h2>
-                            <figure class="code">
-                                <img class="code-shot" src="fig-2.png" alt="Build-Time Configuration">
-                            </figure>
-                            <p>The <i>configuration</i> phase &ndash; upstream from program compilation &ndash; stands as the defining innovation of the EM<span class="em-bull"></span>Script translation flow.</p>
-                            <p>As in target compilation, the translator first emits a <code>Mod.em.js</code> file for every EM<span class="em-bull"></span>Script module.&thinsp; <code>main.js</code> will then <code class="cmd-ck">import</code> all generated code.</p>
-                            <p>But unlike target compilation, <code>main.js</code> serves as the application's <i>meta-program</i> &ndash; running on a Node.js desktop rather than a resource-constrained MCU.</p>
-                            <p>The configuration phase in fact serves as a build-time <i>staging area</i> &ndash; enabling an unconstrained &ldquo;dry-run&rdquo; of the target application program.</p>
-                            <p>Just as modules contribute <i>target</i> functions invoked at run-time, they can also shape program configuration through build-time <i>meta</i> functions.</p>
-                            <p>With every EM<span class="em-bull"></span>Script module actively participating, a new category of <i>application-driven</i> optimizations starts to emerge.</p>
-                        </div>
-                        <div class="item">
-                            <h2>EM<span class="em-bull"></span>Script &ndash; its own meta-language</h2>
-                            <p>Using the same language syntax and semantics to express <i>target</i> as well as <i>meta</i> functions reflects the novelty of the EM<span class="em-bull"></span>Script translator.</p>
-                            <p>In this flow, intrinsic constructs like <code class="cmd-cs">$config</code> parameters and <code class="cmd-cs">$proxy</code> modules act as <i>build-time</i> variables which harden into <i>run-time</i> constants.</p>
-                            <p>With all of Node.js available during configuration, meta-functions can bring extensive resources to bear when computing <code class="cmd-cs">$config</code> or <code class="cmd-cs">$proxy</code> values.</p>
-                            <p>Once frozen, downstream compilation can fold <code class="cmd-cs">$config</code> values across the target program as well as directly call (or even <code>inline</code>) <code class="cmd-cs">$proxy</code> methods.</p>
-                            <p>Less memory, more compact code, no run-time indirection &ndash; just higher-level programming with higher levels of run-time performance.</p>
-                        </div>
-                    </section>
-
-                    <section class="group">
-                        <div class="group-title">The Environment</div>
-
-                        <div class="item">
-                            <h2>Use VS Code &ndash; familiar and proven</h2>
-                            <p>VS Code draws developers working in multiple languages and application domains &ndash; including embedded programming in C/C++.</p>
-                        </div>
-                        <div class="item">
-                            <h2>Write TypeScript &ndash; built-in tooling</h2>
-                            <p>Using TypeScript brings autocompletion, navigation, refactoring, formatting, and diagnostics directly from VS Code&rsquo;s built-in language services.</p>
-                        </div>
-                        <div class="item">
-                            <h2>Add EM<span class="em-bull"></span>Builder &ndash; from tour to target</h2>
-                            <p>The EM<span class="em-bull"></span>Builder extension augments VS Code with EM<span class="em-bull"></span>Script-centric views, guided tours, and integrated build&thinsp;<b>&middot;</b>&thinsp;run workflows.</p>
-                            <figure class="code">
-                                <img class="code-shot" src="screen-1.png" alt="EM•Builder Views">
-                                <div class="gallery-caption">Content browser <b>&middot;</b> Guided tours <b>&middot;</b> Editing experience</div>
-                            </figure>
-                            <figure class="code">
-                                <img class="code-shot" src="screen-2.png" alt="EM•Builder Build · Run">
-                                <div class="gallery-caption">Quick-start Pi Pico simulator <b>&middot;</b> Signal capture and analysis</div>
-                            </figure>
-                            <figure class="code">
-                                <img class="code-shot" src="screen-3.png" alt="EM•Script Grammar">
-                                <div class="gallery-caption">Interactive railroad-track grammar</div>
-                            </figure>
-                        </div>
-                    </section>
-
-                    <section class="group">
-                        <div class="group-title">The Foundation</div>
-
-                        <div class="item">
-                            <h2>Backed by The EM Foundation</h2>
-                            <p>The EM Foundation promotes, sustains, and evolves EM™ programming technology for the embedded
-                                systems community.</p>
-                            <p>Formed in 2023 as a California public benefit corporation, it operates as a 501(c)(3) nonprofit.
-                            </p>
-                        </div>
-                        <div class="item">
-                            <h2>15+ years of real-world experience</h2>
-                            <p>Since 2010, EM programming technology has supported more than twenty 8-, 16-, and 32-bit MCUs
-                                across a dozen silicon vendors.</p>
-                            <p>Commercial deployments on select platforms have demonstrated
-                                measurable reductions in code size, power consumption, and system cost.</p>
-                        </div>
-                        <div class="item" id="emporium">
-                            <h2>EM<span class="em-bull"></span>porium &ndash; the nexus of EM<span class="em-bull"></span>Script content</h2>
-                            <p>View it, visit it, follow it, install it, learn it, discuss it, and ultimately contribute your own content to it&thinsp;&hellip;</p>
-                            <p>🎬&thinsp;<a class="repo-link" href="ani-1.html">Watch EM&bull;Script in action ➜</a></p>
-                            <p>🎬&thinsp;<a class="repo-link" href="ani-2.html">Watch an introductory tour ➜</a></p>
-                            <p>🎬&thinsp;<a class="repo-link" href="ani-3.html">Watch a grammar walk-through ➜</a></p>
-                            <p>🔍<a class="repo-link"
-                                href="https://github.com/em-foundation/emporium/blob/dev/docs/ReadMore.md"
-                                target="_blank"
-                                rel="noopener">
-                                Explore the EM<span class="em-bull"></span>porium on GitHub ➜
-                            </a></p>                            
-                        </div>
-                    </section>
-
-                    <section class="group">
-                        <div class="group-title">The Vision</div>
-
-                        <div class="item">
-                            <h2>An EM<span class="em-bull"></span>porium of tiny code</h2>
-                            <p>A shared repository of reusable EM<span class="em-bull"></span>Script content for resource-constrained embedded systems, where every byte and &mu;Joule matters.</p>
-                        </div>
-                        <div class="item">
-                            <h2>10× smaller than legacy C</h2>
-                            <p>Higher-level language constructs combined with build-time specialization enable order-of-magnitude reductions in run-time code size.
-                            </p>
-                        </div>
-                        <div class="item">
-                            <h2>10× impact on silicon PPA</h2>
-                            <p>Comparable order-of-magnitude improvements in <i>power &middot; performance &middot; area</i> for next-generation MCUs targeting deeply-embedded systems.</p>
-                        </div>
-                        <div class="closing">Tiny Code <span class="em-arrow"></span> Tiny Chips</div>
-                    </section>
-                </main>
+                    </main>
+                </div>
             </div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>
