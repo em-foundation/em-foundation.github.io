@@ -187,7 +187,7 @@ figure.code figcaption {
     color: var(--muted);
 }
 
-.gallery-caption {
+.gallery-caption { 
     font-size: 0.85rem;
     font-weight: 500;
     color: rgba(255,255,255,0.8);
@@ -303,7 +303,7 @@ code.cmd-cs { color: #cd6f1c; }
                             <h2>EM<span class="em-bull"></span>Script <span class="em-arrow"></span> reclaim energy with software</h2>
                             <p>An alternative software approach can eliminate much of this overhead &ndash; reducing execution time and hence shrinking the area under the power curve.</p>
                             <p>The EM<span class="em-bull"></span>Script programming language employs a novel translator which generates tiny, specialized target firmware &ndash; often outperforming legacy C code.</p>
-                            <p>Less time active <span class="em-arrow"></span> more time asleep.</p>
+                            <p>In practice, smaller code will often correlate with higher energy efficiency.</p>
                         </div>
                     </section>
 
@@ -311,13 +311,30 @@ code.cmd-cs { color: #cd6f1c; }
                         <div class="group-title">The Proof</div>
 
                         <div class="item">
-                            <h2>Same HW <span class="em-arrow"></span> compare two BLE stacks</h2>
-                        </div>
+                            <h2>Same HW <span class="em-arrow"></span> different BLE SW</h2>
+                            <p>Compare power profiles for two SW implementations of the BlueJoule workload on the TI CC2340 MCU:</p>
+                            <figure class="code">
+                                <img class="code-shot" src="fig-2.png" alt="BLE Advertising Event">
+                                <div class="gallery-caption">Vendor SDK &ndash; Energy Consumption</div>
+                            </figure>
+                             <figure class="code">
+                                <img class="code-shot" src="fig-3.png" alt="BLE Advertising Event">
+                                <div class="gallery-caption">EM&bull;Script &ndash; Energy Consumption</div>
+                            </figure>
+                            <p>Reduced SW overhead shrinks the area under the curve &ndash; and EM&bull;Script clearly uses less energy here.</p>
+                            <p>Nordic nRF52/nRF54 HW shows similar gains in energy efficiency when running EM&bull;Script SW.</p>
+                         </div>
                         <div class="item">
                             <h2>EM<span class="em-bull"></span>eralds <span class="em-arrow"></span> quantify energy efficiency</h2>
+                            <p>To streamline comparison of different HW/SW configurations, BlueJoule uses a single metric to quantify energy efficiency &ndash; the EM&bull;erald.</p>
+                            <p>After capturing raw power samples during live workload execution, BlueJoule tooling computes a gamified <i>“higher is better”</i> energy score.</p>
+                            <p>Returning to the TI CC2340 waveforms shown above, the vendor's BLE stack vs EM&bull;Script yield scores of <b>28.7</b> vs <b>40.1</b> EM&bull;eralds.</p>
+                            <p>Since 1 EM•erald ≈ 1 CR2032-month, the EM&bull;Script version runs roughly one year <i>longer</i> when powered by this popular coin-cell battery.</p>
                         </div>
                         <div class="item">
                             <h2>EM<span class="em-bull"></span>Script <span class="em-arrow"></span> consistently better</h2>
+                            <p>The BlueJoule repository (linked below) stores power waveforms captured at a range of voltages for different HW/SW configurations.</p>
+                            <p>Captures with labels of the form <code>*/emscript-*</code> consistently report higher EM&bull;erald scores &ndash; by reducing the area under the power curve when active.</p>
                         </div>
                     </section>
 
@@ -326,17 +343,26 @@ code.cmd-cs { color: #cd6f1c; }
 
                         <div class="item">
                             <h2>Fewer instructions <span class="em-arrow"></span> faster execution</h2>
+                            <p>Vendor BLE stacks span hundreds of kilobytes; the EM&bull;Script implementation fits in 2.5–5 KB.</p>
+                            <p>The sheer number of instructions executed by vendor stacks to setup/teardown basic BLE advertising dwarfs comparable EM&bull;Script code.</p>
+                            <p>Complex device-driver designs coupled with layers of OS abstractions come with a cost &ndash; added execution time to perform the same tasks.</p>
                         </div>
                         <div class="item">
                             <h2>Less CPU activity <span class="em-arrow"></span> more time asleep</h2>
+                            <p>Many embedded systems spend most of their lifetime in low-power <i>deep-sleep</i>.</p>
+                            <p>While these systems can draw &gt;10&thinsp;mW when active, they need as little as ~1&thinsp;&mu;W of power when asleep.</p>
+                            <p>Executing fewer instructions minimizes CPU activity &ndash; allowing an earlier return to deep-sleep.</p>
                         </div>
                         <div class="item">
                             <h2>Reduced memory access <span class="em-arrow"></span> greater efficiency</h2>
+                            <p>Compact EM&bull;Script programs also lead to more energy-efficient use of memory resources.</p>
+                            <p>Code as small as 2.5&thinsp;KB improves CPU <i>cache hits</i> &ndash; not only speeding execution, but also reducing power consumption from FLASH.</p>
+                            <p>On some MCUs (like the TI CC2340), small EM&bull;Script programs can execute entirely from SRAM &ndash; keeping FLASH&thinsp;+&thinsp;cache memory powered-down.</p>
                         </div>
                     </section>
 
                     <section class="group">
-                        <div class="group-title">The Artifact</div>
+                        <div class="group-title">The Artifacts</div>
 
                         <div class="item">
                             <h2>Portable EM<span class="em-bull"></span>Script <span class="em-arrow"></span> <code>BlueJoule.em.ts</code></h2>
