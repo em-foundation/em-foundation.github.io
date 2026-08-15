@@ -33,8 +33,16 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Stamp published HTML
+        shell: bash
+        run: |
+          STAMP="$(date -u +'%y%m%d-%H%M%S')"
+          ISO="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+
+          find ./site -type f -name '*.html' -exec sed -i             -e "s/@@BUILD_TIMESTAMP@@/${STAMP}/g"             -e "s/@@BUILD_DATETIME@@/${ISO}/g" {} +
+
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           # Upload entire repository
           path: './site'
