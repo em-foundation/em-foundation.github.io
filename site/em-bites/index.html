@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>EM•Bites</title>
+
+        <!-- OG -->
+        <meta property="og:title" content="EM•Bites" />
+        <meta property="og:description" content="Telling the Open•EM story." />
+        <meta
+            property="og:image"
+            content="https://www.openem.org/em-bites/preview.png"
+        />
+        <meta property="og:url" content="https://www.openem.org/em-bites/" />
+
+        <!-- GA -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-TZX6DDEFLV"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || []
+            function gtag() {
+                window.dataLayer.push(arguments)
+            }
+            gtag('js', new Date())
+            gtag('config', 'G-TZX6DDEFLV')
+        </script>
+
+        <link rel="icon" type="image/png" href="../favicon.png" />
+        <link rel="stylesheet" href="../article.css" />
+
+        <style>
+            .bite-subtitle {
+                margin: 0.35rem 0 0;
+                padding-left: 2em;
+            }
+
+            .bite-list .item {
+                padding-top: 0.35rem;
+                padding-bottom: 1.05rem;
+            }
+
+            .bite-entry + .bite-entry {
+                margin-top: 0.95rem;
+            }
+
+            .bite-entry h2 {
+                margin-bottom: 0.35rem;
+            }
+
+            .bite-blurb {
+                margin: 0;
+                font-size: 90%;
+                padding-left: 2em;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="viewport">
+            <div class="page">
+                <div class="frame" role="document" aria-label="EM•Bites index">
+                    <header class="masthead">
+                        <div>
+                            <h1>EM<span class="em-bull"></span>Bites</h1>
+                            <p class="bite-subtitle">
+                                Telling the Open<span class="em-bull"></span>EM
+                                story.
+                            </p>
+                        </div>
+
+                        <div class="masthead-mark">
+                            <img src="../logo.png" class="logo" alt="EM logo" />
+                        </div>
+                    </header>
+
+                    <main>
+                        <section class="group bite-list">
+                            <div class="group-title">Bite-sized Stories</div>
+
+                            <div class="item">
+                                <div class="bite-entry">
+                                    <h2>
+                                        <a class="repo-link" href="00-about/">
+                                            #0&nbsp; Why we exist
+                                        </a>
+                                    </h2>
+                                    <p class="bite-blurb">
+                                        About The EM Foundation.
+                                    </p>
+                                </div>
+
+                                <div class="bite-entry">
+                                    <h2>
+                                        <a class="repo-link" href="01-emscript/">
+                                            #1&nbsp; EM<span
+                                                class="em-bull"
+                                            ></span
+                                            >Script
+                                        </a>
+                                    </h2>
+                                    <p class="bite-blurb">
+                                        Tiny code for tiny chips.
+                                    </p>
+                                </div>
+
+                                <div class="bite-entry">
+                                    <h2>
+                                        <a class="repo-link" href="02-tours/">
+                                            #2&nbsp; Taking the EM<span
+                                                class="em-bull"
+                                            ></span
+                                            >Tours
+                                        </a>
+                                    </h2>
+                                    <p class="bite-blurb">
+                                        Learn EM<span class="em-bull"></span
+                                        >Script from the code outward.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="group">
+                            <div class="group-title">More to Come</div>
+
+                            <div class="item">
+                                <p>
+                                    More EM<span class="em-bull"></span>Bites
+                                    will follow as Open<span
+                                        class="em-bull"
+                                    ></span
+                                    >EM evolves.
+                                </p>
+                            </div>
+                        </section>
+
+                        <div class="article-meta">
+                            <time datetime="@@BUILD_DATETIME@@"
+                                >@@BUILD_TIMESTAMP@@</time
+                            >
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
