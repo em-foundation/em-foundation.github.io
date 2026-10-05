@@ -18,25 +18,65 @@
     <style>
         .link-group {
             width: fit-content;
-            max-width: 82%;
-            margin: 18px auto 0;
+            margin: 28px auto 0;
+            display: grid;
+            grid-template-columns: max-content max-content max-content;
+            column-gap: 0.7em;
+            row-gap: 0.7em;
+            align-items: baseline;
             text-align: left;
         }
 
-        .link-item {
-            margin: 14px 0;
+        .link-title {
+            font-size: 1.1em;
+            white-space: nowrap;
         }
 
-        .link-item .highlight {
-            margin: 0;
-            font-size: 1.05em;
+        .link-sep {
+            color: #cccccc;
         }
 
         .link-slug {
-            margin: 3px 0 0;
-            padding-left: 1.6em;
-            font-size: 0.9em;
+            font-size: 0.88em;
             color: #cccccc;
+            white-space: nowrap;
+        }
+
+        .em-bull {
+            color: #00CC99;
+        }
+
+        footer {
+            margin-top: 28px;
+        }
+
+        @media (max-width: 520px) {
+            .link-group {
+                width: 88%;
+                margin-top: 22px;
+                grid-template-columns: max-content 1fr;
+                column-gap: 0.5em;
+                row-gap: 0.2em;
+            }
+
+            .link-title {
+                grid-column: 1 / -1;
+            }
+
+            .link-sep {
+                display: none;
+            }
+
+            .link-slug {
+                grid-column: 1 / -1;
+                padding-left: 1.4em;
+                margin-bottom: 0.55em;
+                white-space: normal;
+            }
+
+            footer {
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
@@ -47,29 +87,20 @@
             <h1 class="tagline">tiny code&thinsp; <span class="arrow">&#x279C;</span> &thinsp;tiny chips</h1>
         </header>
         <main>
-            <p class="mission">The EM Foundation promotes, sustains, and evolves EM™ programming tech&shy;nology for use by the broader embedded systems community.</p>
+            <p class="mission"><b>The EM Foundation</b> promotes, sustains, and evolves <b>Open<span class="em-bull">•</span>EM™ software technology</b> for use by the broader embedded systems community.</p>
 
             <div class="link-group">
-                <div class="link-item">
-                    <p class="highlight">
-                        <a href="/about"><b>Learn about The EM Foundation</b></a>
-                    </p>
-                    <p class="link-slug">why we exist and how our major efforts fit together</p>
-                </div>
+                <a class="link-title" href="/about"><b>About The EM Foundation</b></a>
+                <span class="link-sep">&mdash;</span>
+                <span class="link-slug">why we exist</span>
 
-                <div class="link-item">
-                    <p class="highlight">
-                        <a href="/emscript"><b>Explore EM•Script</b></a>
-                    </p>
-                    <p class="link-slug">our flagship technology initiative</p>
-                </div>
+                <a class="link-title" href="/emscript"><b>Explore EM•Script</b></a>
+                <span class="link-sep">&mdash;</span>
+                <span class="link-slug">our flagship technology</span>
 
-                <div class="link-item">
-                    <p class="highlight">
-                        <a href="/em-bites/"><b>Browse EM•Bites</b></a>
-                    </p>
-                    <p class="link-slug">bite-sized articles about Open•EM</p>
-                </div>
+                <a class="link-title" href="/em-bites/"><b>Browse EM•Bites</b></a>
+                <span class="link-sep">&mdash;</span>
+                <span class="link-slug">bite-sized Open<span class="em-bull">•</span>EM articles</span>
             </div>
         </main>
         <footer>
