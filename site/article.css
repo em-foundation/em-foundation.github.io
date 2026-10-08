@@ -305,3 +305,22 @@ code.cmd-cs {
     margin-right: 0;
     margin-top: 0.16em;
 }
+
+.footer-home {
+    display: flex;
+    justify-content: center;
+    margin: 28px 0 6px 0;
+}
+
+.footer-home-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+.footer-logo {
+    width: 44px;
+    height: 44px;
+    opacity: 0.9;
+}
