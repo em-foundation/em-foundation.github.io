@@ -308,7 +308,7 @@ code.cmd-cs {
 
 .footer-home {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     margin: 28px 0 6px 0;
 }
 
