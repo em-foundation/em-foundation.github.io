@@ -95,12 +95,68 @@
                             <div class="group-title">The Benchmark</div>
                             <div class="item">
                                 <h2>Run the same workload</h2>
+                                <p>
+                                    <b>BlueJoule</b> measures the energy
+                                    consumption within a system performing a
+                                    defined BLE workload.
+                                </p>
+                                <p>
+                                    By prescribing <i>behavior</i> rather than
+                                    source code, the benchmark suite leaves room
+                                    for fundamentally different software designs
+                                    as well as hardware diversity.
+                                </p>
                             </div>
                             <div class="item">
-                                <h2>Add a connection</h2>
+                                <h2>Add BLE connections</h2>
+                                <p>
+                                    The original <b>BlueJoule-ADV</b> workload
+                                    (defined in 2025) measured periodic
+                                    advertising across a range of BLE device
+                                    vendors.
+                                </p>
+                                <p>
+                                    <b>BlueJoule-GATT</b>
+                                    now extends the benchmark suite with a
+                                    connected transaction between a BLE
+                                    <i>central</i> and <i>peripheral</i> device:
+                                </p>
+                                <figure class="code">
+                                    <img
+                                        class="code-shot"
+                                        src="fig-1.png"
+                                        alt="BlueJoule-GATT central and peripheral exchange, with the peripheral measurement window excluding advertising"
+                                    />
+                                    <div class="gallery-caption">
+                                        Peripheral connection energy &ndash;
+                                        excluding advertising
+                                    </div>
+                                </figure>
                             </div>
                             <div class="item">
                                 <h2>Compare configurations</h2>
+                                <p>
+                                    Each <b>BlueJoule</b> result reflects a
+                                    complete HW/SW configuration performing the
+                                    prescribed workload.
+                                </p>
+                                <p>
+                                    Transaction energy plus sleep power
+                                    determine an
+                                    <b>EM<span class="em-bull"></span>erald</b>
+                                    score &ndash; higher means greater
+                                    efficiency.
+                                </p>
+                                <p>
+                                    The same workload allows us to easily
+                                    compare different hardware, different
+                                    software, or both.
+                                </p>
+                                <p>
+                                    So let&rsquo;s hold the hardware constant
+                                    &ndash; and see what changing the software
+                                    reveals&thinsp;&hellip;
+                                </p>
                             </div>
                         </section>
                         <section class="group">
