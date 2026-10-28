@@ -63,9 +63,8 @@
                                     Different hardware &middot; Same software
                                 </h2>
                                 <p>
-                                    Industry benchmarks often a common
-                                    program on different processors.&thinsp; 
-                                    Think
+                                    Industry benchmarks often a common program
+                                    on different processors.&thinsp; Think
                                     <b>CoreMark</b>&reg;&thinsp;&hellip;
                                 </p>
                                 <p>
@@ -103,7 +102,8 @@
                                 <p>
                                     By prescribing <i>behavior</i> rather than
                                     source code, the benchmark suite leaves room
-                                    for fundamentally different (yet compliant) software designs.
+                                    for fundamentally different (yet compliant)
+                                    software designs.
                                 </p>
                             </div>
                             <div class="item">
@@ -111,8 +111,8 @@
                                 <p>
                                     The original <b>BlueJoule-ADV</b> workload
                                     (defined in 2025) measured periodic
-                                    advertising across a range of platforms from popular BLE device
-                                    vendors.
+                                    advertising across a range of platforms from
+                                    popular BLE device vendors.
                                 </p>
                                 <p>
                                     <b>BlueJoule-GATT</b>
@@ -153,8 +153,8 @@
                                 </p>
                                 <p>
                                     So let&rsquo;s hold the hardware constant
-                                    &ndash; and see what changing the <i>software</i> might
-                                    reveal&thinsp;&hellip;
+                                    &ndash; and see what changing the
+                                    <i>software</i> might reveal&thinsp;&hellip;
                                 </p>
                             </div>
                         </section>
@@ -162,12 +162,49 @@
                             <div class="group-title">The Comparison</div>
                             <div class="item">
                                 <h2>Pick the platform</h2>
+                                <p>
+                                    Start with a <i>single</i>
+                                    hardware device and a working software stack
+                                    compliant with BlueJoule-GATT.
+                                </p>
+                                <p>
+                                    For this experiment, we chose Nordic&rsquo;s
+                                    <b>nRF54L15</b> running <b>Zephyr</b> on its
+                                    Cortex-M33 CPU &ndash; though this approach
+                                    scales to other devices as well.
+                                </p>
                             </div>
                             <div class="item">
                                 <h2>Change the software</h2>
+                                <p>
+                                    Keep the hardware and workload fixed &ndash;
+                                    but replace Zephyr with compliant software
+                                    written in
+                                    <b>EM<span class="em-bull"></span>Script</b
+                                    >.
+                                </p>
+                                <p>
+                                    Both programs complete the prescribed
+                                    transaction with the same reference BLE
+                                    central &ndash; allowing us to quantify the
+                                    impact of switching software.
+                                </p>
                             </div>
                             <div class="item">
                                 <h2>Extend the experiment</h2>
+                                <p>
+                                    Software changes can also dictate
+                                    <i>where</i> the code runs &ndash; in FLASH
+                                    vs SRAM, or on one CPU vs another.
+                                </p>
+                                <p>
+                                    The nRF54L15 includes a second, RISC-V CPU
+                                    &ndash; also supported by EM<span
+                                        class="em-bull"
+                                    ></span
+                                    >Script, adding another compliant
+                                    configuration to the experiment.
+                                </p>
                             </div>
                         </section>
                         <section class="group">
