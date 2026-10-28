@@ -282,18 +282,19 @@
                                     </div>
                                 </figure>
                                 <p>
-                                    Within this BLE packet exchange,
-                                    EM<span class="em-bull"></span>Script uses
-                                    22% less energy and returns to idle 35%
-                                    sooner.
+                                    Within this BLE packet exchange, EM<span
+                                        class="em-bull"
+                                    ></span
+                                    >Script uses 22% less energy and returns to
+                                    idle 35% sooner.
                                 </p>
                             </div>
                             <div class="item">
                                 <h2>What explains the difference?</h2>
                                 <p>
                                     The hardware and workload remain the same,
-                                    but software takes a fundamentally
-                                    different approach.
+                                    but software takes a fundamentally different
+                                    approach.
                                 </p>
                                 <p>
                                     To understand these results, let’s examine
@@ -307,12 +308,44 @@
                             <div class="group-title">The Footprint</div>
                             <div class="item">
                                 <h2>Count the bytes</h2>
+                                <p>
+                                    Linker maps for this trio of compliant
+                                    programs reveal how much code, constant
+                                    storage, and writable data each
+                                    implementation requires:
+                                </p>
+                                <figure class="code">
+                                    <img
+                                        class="code-shot"
+                                        src="fig-5.png"
+                                        alt="Basic-GATT section sizes in bytes for Zephyr M33, EM•Script M33, and EM•Script RISC-V respectively: executable code 114804, 6212, 8204; read-only constants 8764, 284, 384; initialized variables 2820, 68, 68; uninitialized variables 9940, 216, 216."
+                                    />
+                                </figure>
+                                <p>
+                                    Needless to say, Zephyr dwarfs its EM<span
+                                        class="em-bull"
+                                    ></span
+                                    >Script counterpart on the M33 &ndash; using
+                                    roughly 18&times; more code.&thinsp; The
+                                    other program sections show similar
+                                    disparities.
+                                </p>
                             </div>
                             <div class="item">
-                                <h2>Measure separately</h2>
-                            </div>
-                            <div class="item">
-                                <h2>Consider both dimensions</h2>
+                                <h2>Fits in SRAM</h2>
+                                <p>
+                                    When targeting the RISC-V CPU,
+                                    code&thinsp;+&thinsp;const size of the
+                                    EM<span class="em-bull"></span>Script
+                                    program grew ~30% &ndash; consistent with
+                                    guidance provided by Nordic.
+                                </p>
+                                <p>
+                                    The entire program (including space for its
+                                    stack) in fact fits within a
+                                    <i>single</i> 16K block of SRAM &ndash;
+                                    increasing throughput on the RISC-V CPU.
+                                </p>
                             </div>
                         </section>
                         <section class="group">
