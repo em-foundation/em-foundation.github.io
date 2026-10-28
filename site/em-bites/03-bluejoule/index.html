@@ -118,13 +118,13 @@
                                     <b>BlueJoule-GATT</b>
                                     now extends the benchmark suite with a
                                     connected transaction between a BLE
-                                    <i>central</i> and <i>peripheral</i> device:
+                                    <i>Central</i> and <i>Peripheral</i> device:
                                 </p>
                                 <figure class="code">
                                     <img
                                         class="code-shot"
                                         src="fig-1.png"
-                                        alt="BlueJoule-GATT central and peripheral exchange, with the peripheral measurement window excluding advertising"
+                                        alt="BlueJoule-GATT Central and Peripheral exchange, with the Peripheral measurement window excluding advertising"
                                     />
                                     <div class="gallery-caption">
                                         Peripheral connection energy &ndash;
@@ -177,15 +177,16 @@
                             <div class="item">
                                 <h2>Change the software</h2>
                                 <p>
-                                    Keep hardware and workload fixed &ndash;
-                                    but replace Ze&shy;phyr with compliant software
+                                    Keep hardware and workload fixed &ndash; but
+                                    replace Ze&shy;phyr with compliant software
                                     written in
-                                    <b>EM<span class="em-bull"></span>Script</b>.
+                                    <b>EM<span class="em-bull"></span>Script</b
+                                    >.
                                 </p>
                                 <p>
                                     Both programs complete the prescribed
                                     transaction with the same reference BLE
-                                    central &ndash; allowing us to quantify the
+                                    Central &ndash; allowing us to quantify the
                                     impact of switching software.
                                 </p>
                             </div>
@@ -193,29 +194,113 @@
                                 <h2>Extend the experiment</h2>
                                 <p>
                                     Software changes can also dictate
-                                    <i>where</i> the code runs &ndash; FLASH
-                                    vs SRAM, or on one CPU vs another.
+                                    <i>where</i> the code runs &ndash; FLASH vs
+                                    SRAM, or on one CPU vs another.
                                 </p>
                                 <p>
-                                    The nRF54L15 includes a second, <b>RISC-V</b> CPU
-                                    that EM<span
+                                    The nRF54L15 includes a second,
+                                    <b>RISC-V</b> CPU that EM<span
                                         class="em-bull"
                                     ></span
-                                    >Script also supports &ndash; adding another compliant
-                                    BlueJoule-GATT implementation to the experiment.
+                                    >Script also supports &ndash; adding another
+                                    compliant BlueJoule-GATT implementation to
+                                    the experiment.
                                 </p>
                             </div>
                         </section>
                         <section class="group">
                             <div class="group-title">The Evidence</div>
                             <div class="item">
-                                <h2>Measure the transaction</h2>
+                                <h2>Compare the results</h2>
+                                <p>
+                                    We measured three different BlueJoule-GATT
+                                    soft&shy;ware implementations using a
+                                    <b>Joulescope JS220</b>.
+                                </p>
+                                <p>
+                                    Each transaction-energy result averages ten
+                                    completed connections, excluding
+                                    advertising.
+                                </p>
+                                <figure class="code">
+                                    <img
+                                        class="code-shot"
+                                        src="fig-4.png"
+                                        alt="nRF54L15 BlueJoule-GATT results at 3 V: Zephyr M33 scores 41.4 EM•eralds with 174.9 µJ event energy and 1652 nA sleep current; EM•Script M33 scores 56.0 with 137.9 µJ and 930 nA; EM•Script RISC-V scores 58.6 with 133.0 µJ and 846 nA. Scores use a 10-second period."
+                                    />
+                                </figure>
+                                <p>
+                                    EM<span class="em-bull"></span>Script on the
+                                    Cortex-M33 consumes 21% less overall
+                                    transaction energy than Zephyr.
+                                </p>
+                                <p>
+                                    Lower sleep current further improves its
+                                    EM<span class="em-bull"></span>erald score
+                                    &ndash; which quantifies overall energy
+                                    efficiency.
+                                </p>
+                                <p>
+                                    Remarkably, the EM<span
+                                        class="em-bull"
+                                    ></span
+                                    >Script implementation on the
+                                    nRF54L15&rsquo;s RISC-V CPU turned in the
+                                    highest score.
+                                </p>
                             </div>
                             <div class="item">
-                                <h2>Look at the waveforms</h2>
+                                <h2>Look inside an event</h2>
+                                <p>
+                                    On the same Cortex-M33 CPU, zoom to a single
+                                    corresponding
+                                    Central&thinsp;&middot;&thinsp;Peripheral
+                                    packet exchange within the connection
+                                    transaction.
+                                </p>
+                                <figure class="code">
+                                    <img
+                                        class="code-shot"
+                                        src="fig-2.png"
+                                        alt="Zephyr Cortex-M33 connection event power waveform"
+                                    />
+                                    <div class="gallery-caption">
+                                        Zephyr &middot; 1.878&thinsp;ms &middot;
+                                        7.790&thinsp;&micro;J
+                                    </div>
+                                </figure>
+                                <figure class="code">
+                                    <img
+                                        class="code-shot"
+                                        src="fig-3.png"
+                                        alt="EM•Script Cortex-M33 connection event power waveform"
+                                    />
+                                    <div class="gallery-caption">
+                                        EM<span class="em-bull"></span>Script
+                                        &middot; 1.214&thinsp;ms &middot;
+                                        6.110&thinsp;&micro;J
+                                    </div>
+                                </figure>
+                                <p>
+                                    For this individual BLE packet exchange,
+                                    EM<span class="em-bull"></span>Script uses
+                                    22% less energy and returns to idle 35%
+                                    sooner.
+                                </p>
                             </div>
                             <div class="item">
-                                <h2>See what changed</h2>
+                                <h2>What explains the difference?</h2>
+                                <p>
+                                    The hardware and workload remain the same,
+                                    but the software takes a fundamentally
+                                    different approach.
+                                </p>
+                                <p>
+                                    To understand these results, let’s examine
+                                    another measurable difference – the amount
+                                    of code required to implement the
+                                    BlueJoule-GATT workload.
+                                </p>
                             </div>
                         </section>
                         <section class="group">
