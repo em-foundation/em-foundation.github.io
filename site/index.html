@@ -49,10 +49,12 @@
         .benchmark-note {
             max-width: 640px;
             margin: 28px auto 0;
-            font-size: 1.3em;
+            font-size: var(--mission-font-size);
             font-weight: 500;
             line-height: 1.6;
             text-wrap: balance;
+            white-space: nowrap;
+            letter-spacing: 0;
         }
 
         .benchmark-note a {
@@ -61,12 +63,12 @@
             margin-left: 0.35em;
             background: white;
             border-radius: 4px;
-            padding: 4px;
+            padding: 0.22em;
             line-height: 0;
         }
 
         .benchmark-partner {
-            width: 48px;
+            width: 2.65em;
             height: auto;
             vertical-align: middle;
             border-radius: 2px;
@@ -77,33 +79,37 @@
         }
 
         @media (max-width: 520px) {
+            .benchmark-note {
+                font-size: var(--mission-font-size);
+                margin-top: 42px;
+            }
+
             .link-group {
-                width: 70%;
-                margin: 22px auto 0;
-                grid-template-columns: max-content 1fr;
+                width: fit-content;
+                max-width: 100%;
+                margin: 36px auto 0;
+                grid-template-columns: max-content max-content max-content;
+                font-size: min(0.82rem, 2.8vw);
                 column-gap: 0.5em;
-                row-gap: 0.2em;
+                row-gap: 1.6em;
             }
 
             .link-title {
-                grid-column: 1 / -1;
                 font-size: 1em;
            }
 
             .link-sep {
-                display: none;
+                display: inline;
             }
 
             .link-slug {
-                grid-column: 1 / -1;
-                padding-left: 1.4em;
-                margin-bottom: 0.55em;
                 font-size: 0.9em;
-                white-space: normal;
+                white-space: nowrap;
             }
 
             footer {
-                margin-top: 20px;
+                margin-top: 40px;
+                font-size: 0.7rem;
             }
 
         }
