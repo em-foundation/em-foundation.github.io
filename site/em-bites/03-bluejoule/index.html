@@ -83,7 +83,7 @@
                                     Different hardware &middot; Same software
                                 </h2>
                                 <p>
-                                    Industry benchmarks often a common program
+                                    Industry benchmarks typically run a common program
                                     on different processors.&thinsp; Think
                                     <b>CoreMark</b>&reg;&thinsp;&hellip;
                                 </p>
@@ -132,13 +132,13 @@
                                     The original <b>BlueJoule-ADV</b> workload
                                     (defined in 2025) measured periodic
                                     advertising across a range of platforms from
-                                    popular BLE device vendors.
+                                    popular BLE silicon vendors.
                                 </p>
                                 <p>
                                     <b>BlueJoule-GATT</b>
                                     now extends the benchmark suite with a
-                                    connected transaction between a BLE
-                                    <i>Central</i> and <i>Peripheral</i> device:
+                                    connected transaction between a pair of BLE devices playing the
+                                    <i>Central</i> and <i>Peripheral</i> roles:
                                 </p>
                                 <figure class="code">
                                     <img
@@ -191,7 +191,7 @@
                                     For this experiment, we chose Nordic&rsquo;s
                                     <b>nRF54L15</b> running <b>Zephyr</b> on its
                                     Cortex-M33 CPU &ndash; though this approach
-                                    scales to other devices as well.
+                                    scales to other vendor silicon as well.
                                 </p>
                             </div>
                             <div class="item">
@@ -239,7 +239,7 @@
                                 </p>
                                 <p>
                                     Each transaction-energy result averages ten
-                                    completed connections, excluding
+                                    completed connections, excluding initial
                                     advertising.
                                 </p>
                                 <figure class="code">
@@ -266,7 +266,7 @@
                                     ></span
                                     >Script implementation on the
                                     nRF54L15&rsquo;s RISC-V CPU turned in the
-                                    highest score.
+                                    best scores.
                                 </p>
                             </div>
                             <div class="item">
@@ -346,8 +346,8 @@
                                         class="em-bull"
                                     ></span
                                     >Script counterpart on the M33 &ndash; using
-                                    roughly 18&times; more code.&thinsp; The
-                                    other program sections show similar
+                                    roughly 18&times; more code.&thinsp; 
+                                    Other program sections show similar
                                     disparities.
                                 </p>
                             </div>
@@ -364,7 +364,7 @@
                                     The entire program (including space for its
                                     stack) in fact fits within a
                                     <i>single</i> 16K block of SRAM &ndash;
-                                    increasing throughput on the RISC-V CPU.
+                                    increasing throughput of the RISC-V CPU.
                                 </p>
                             </div>
                         </section>
@@ -385,8 +385,8 @@
                                 </p>
                                 <p>
                                     But <i>tiny code</i> also opens several
-                                    paths for increasing overall energy
-                                    efficiency:
+                                    paths for increasing overall <i>energy
+                                    efficiency</i>
                                 </p>
                                 <p>
                                     <span class="step-bull">➤</span>execute
@@ -416,8 +416,8 @@
                                     ></span
                                     >Script encourages
                                     <i>build-time specialization</i> &ndash;
-                                    allowing the application program to tailor
-                                    its run-time firmware content.
+                                    allowing application programs to tailor
+                                    their run-time firmware content.
                                 </p>
                                 <p>
                                     For BlueJoule-GATT we only implement the
