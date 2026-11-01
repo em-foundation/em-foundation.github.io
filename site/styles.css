@@ -5,9 +5,10 @@
 
 :root {
     font-size: 14px;
+
     --container-max-width: 720px;
-    --logo-max-width: 300px;
-    --tagline-font-size: 1.7em;
+    --logo-max-width: 460px;
+
     --mission-font-size: 1.3em;
     --highlight-font-size: 1.3em;
     --status-font-size: 0.72em;
@@ -16,10 +17,9 @@
 
 @media (orientation: portrait) {
     :root {
-        /* font-size: 9px; */
         --container-max-width: 360px;
-        --logo-max-width: 200px;
-        --tagline-font-size: 1.5em;
+        --logo-max-width: 280px;
+
         --mission-font-size: 0.8em;
         --highlight-font-size: 0.67em;
         --status-font-size: 0.4em;
@@ -27,8 +27,13 @@
     }
 }
 
+html,
 body {
-    background-color: #121212;
+    min-height: 100%;
+    background-color: #010313;
+}
+
+body {
     color: #cccccc;
     font-family: Poppins, sans-serif;
     font-weight: 200;
@@ -38,58 +43,68 @@ body {
     margin: 0;
     padding: 0;
 }
+
 body a {
-    color: #00CC99;
+    color: #00cc99;
     text-decoration: none;
 }
+
 body a:hover {
     text-decoration: underline;
 }
-.arrow {
-    color: #00CC99;
-    font-size: 1.5em;
-    font-weight: bold;
-    vertical-align: -5px;
-}
+
 .container {
     max-width: var(--container-max-width);
     margin: auto;
     padding: 20px;
 }
+
 .logo {
-    margin-top: 20px;
+    display: block;
+    width: 100%;
     max-width: var(--logo-max-width);
+    height: auto;
+
+    margin: 10px auto -25px;
 }
-.tagline {
-    font-size: var(--tagline-font-size);
-    color: #80CEFF;
-    margin: 10px 0;
-}
+
 .mission {
     font-size: var(--mission-font-size);
-    margin: 20px 0;
-    padding-top: 25px;
+    margin: 0 0 20px;
+    padding-top: 0;
 }
+
 .highlight {
     font-size: var(--highlight-font-size);
     margin: 25px 0;
 }
+
 .status {
     font-size: var(--status-font-size);
-    color: #AAAAAA;
+    color: #aaaaaa;
     margin-top: 50px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
+
 footer {
     font-size: var(--footer-font-size);
-    color: #AAAAAA;
+    color: #aaaaaa;
     padding: 8px 0;
     width: 100%;
 }
+
 footer a {
-    color: #80CEFF;
+    color: #80ceff;
     text-decoration: none;
 }
+
 footer a:hover {
     text-decoration: underline;
+}
+
+@media (orientation: portrait) {
+    .logo {
+        margin-top: 10px;
+        margin-bottom: -10px;
+    }
 }
